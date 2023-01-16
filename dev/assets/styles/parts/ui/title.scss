@@ -1,0 +1,19 @@
+.title {
+    line-height: 1.1em;
+
+    b {
+        color: $color-2;
+    }
+
+    &--h1,
+    &--h1 b {
+        @include adaptiv-font(96, 48);
+        font-weight: 800;
+    }
+
+    &--h2,
+    &--h2 b {
+        @include adaptiv-font(32, 24);
+        font-weight: 600;
+    }
+}

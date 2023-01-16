@@ -1,3 +1,93 @@
-<footer class="footer">
-    <h2>Footer</h2>
+<footer class="footer" data-footer="main">
+    <div class="main-container max-width">
+        <div class="footer__wrap-links">
+            <div class="footer__wrap-info">
+                <a href="##" class="logo" data-footer="logo">
+                    <img src="./assets/images/logo-light.svg" class="logo__image" alt="">
+                </a>
+                <div class="footer__block-contacts" data-footer="block-contacts">
+                    <div class="footer__block-head" data-footer="block-head">
+                        <span class="footer__title">Контакты</span>
+                        <svg class="footer__arrow">
+                            <use xlink:href="./assets/icons/sprite-svg.svg#arrow-down"/>
+                        </svg>
+                    </div>
+                    <div class="footer__block-contacts-body" data-footer="block-body">
+                        <a href="tel:79180311188" class="footer__phone link-reset">+7 (918) 03-111-88</a>
+                        <span class="footer__contact-info">г. Кропоткин, ул. Шоссейная, 31/1</span>
+                        <a href="mailto:bulunova.o@4stm.ru" class="footer__contact-info link-reset">bulunova.o@4stm.ru</a>
+                        <div class="footer__block-social-network" data-footer="block-social-network">
+                            <span class="footer__info-title">Мы в соц. сетях</span>
+                            @include('../ui/social-network.html')
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__wrap-nav" data-footer="wrap-nav">
+                <div class="footer__block-nav" data-footer="block-nav">
+                    <div class="footer__block-head" data-footer="block-head">
+                        <span class="footer__title">Каталог товаров</span>
+                        <svg class="footer__arrow">
+                            <use xlink:href="./assets/icons/sprite-svg.svg#arrow-down"/>
+                        </svg>
+                    </div>
+                    <div class="footer__block-nav-body" data-footer="block-body">
+                        <ul class="footer__list-nav list-reset">
+                            <li class="footer__li-nav">
+                                <a href="#" class="footer__link-nav link-reset">Новинки</a>
+                            </li>
+                            <li class="footer__li-nav">
+                                <a href="#" class="footer__link-nav link-reset">Хиты</a>
+                            </li>
+                            <li class="footer__li-nav">
+                                <a href="#" class="footer__link-nav link-reset">Инструменты</a>
+                            </li>
+                            <li class="footer__li-nav">
+                                <a href="#" class="footer__link-nav link-reset">Краска и отделочные материалы</a>
+                            </li>
+                            <li class="footer__li-nav">
+                                <a href="#" class="footer__link-nav link-reset">Товары для дома</a>
+                            </li>
+                            <li class="footer__li-nav">
+                                <a href="#" class="footer__link-nav link-reset">Строительные материалы</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer__block-nav" data-footer="block-nav">
+                    <div class="footer__block-head" data-footer="block-head">
+                        <span class="footer__title">О компании</span>
+                        <svg class="footer__arrow">
+                            <use xlink:href="./assets/icons/sprite-svg.svg#arrow-down"/>
+                        </svg>
+                    </div>
+                    <div class="footer__block-nav-body" data-footer="block-body">
+                        <ul class="footer__list-nav list-reset">
+                            <li class="footer__li-nav">
+                                <a href="#" class="footer__link-nav link-reset">О компании</a>
+                            </li>
+                            <li class="footer__li-nav">
+                                <a href="#" class="footer__link-nav link-reset">Оплата и доставка</a>
+                            </li>
+                            <li class="footer__li-nav">
+                                <a href="#" class="footer__link-nav link-reset">Новости</a>
+                            </li>
+                            <li class="footer__li-nav">
+                                <a href="#" class="footer__link-nav link-reset">Контакты</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer__wrap-copy">
+            <a href="##" class="footer__link link-reset">Политика конфиденциальности</a>
+            <a href="https://affetta.ru/" target="_blank" class="footer__link footer__link--developer link-reset">
+                <span class="footer__link-developer-text">Сделано в Affetta</span>
+                <svg class="footer__link-developer-icon">
+                    <use xlink:href="./assets/icons/sprite-svg.svg#developer"/>
+                </svg>
+            </a>
+        </div>
+    </div>
 </footer>

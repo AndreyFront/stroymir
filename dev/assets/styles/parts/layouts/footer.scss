@@ -1,3 +1,148 @@
 .footer {
     flex: 0 0 auto;
+    padding: 64px 0 56px 0;
+    background-color: $color-5;
+
+    &__wrap-links {
+        display: grid;
+        grid-template-columns: 280px auto;
+        justify-content: space-between;
+        grid-column-gap: 20px;
+        align-content: start;
+    }
+
+    &__wrap-info {}
+
+    &__block-contacts {
+        margin-top: 24px;
+
+        .footer__block-head {
+            display: none;
+        }
+    }
+
+    &__block-head {
+        display: grid;
+        grid-template-columns: auto max-content;
+        align-items: center;
+        justify-content: space-between;
+        grid-column-gap: 20px;
+    }
+
+    &__title {
+        color: $color-1;
+        font-weight: 500;
+        @include adaptiv-font(20, 18);
+        transition: color $transition-time;
+    }
+
+    &__arrow {
+        display: none;
+        width: 20px;
+        height: 20px;
+        transition: transform $transition-time;
+
+        use {
+            stroke: $color-1;
+            transition: stroke;
+        }
+    }
+
+    &__block-contacts-body {
+        display: grid;
+        grid-row-gap: 4px;
+        margin-top: 8px;
+    }
+
+    &__phone {
+        color: $color-1;
+        font-weight: 600;
+        @include adaptiv-font(32, 16);
+        line-height: 1em;
+    }
+
+    &__contact-info {
+        color: $color-1;
+        margin-top: 4px;
+    }
+
+    &__block-social-network {
+        display: grid;
+        grid-row-gap: 12px;
+        margin-top: 12px;
+    }
+
+    &__info-title {
+        color: $color-1;
+    }
+
+    &__wrap-nav {
+        display: grid;
+        grid-auto-columns: max-content;
+        grid-auto-flow: column;
+        grid-column-gap: 150px;
+    }
+
+    &__block-nav {}
+
+    &__block-nav-body {
+        margin-top: 16px;
+    }
+
+    &__list-nav {
+        display: grid;
+        grid-row-gap: 10px;
+        align-content: start;
+    }
+
+    &__li-nav {}
+
+    &__link-nav {
+        color: $color-8;
+    }
+
+    &__wrap-copy {
+        display: grid;
+        grid-auto-columns: max-content;
+        grid-auto-flow: column;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 114px;
+        padding-top: 24px;
+        border-top: 1px solid $color-8;
+    }
+
+    &__link {
+        color: $color-8;
+        @include adaptiv-font(16, 14);
+
+        &--developer {
+            display: grid;
+            grid-template-columns: auto max-content;
+            align-items: center;
+            grid-column-gap: 5px;
+
+            &:hover .footer__link-developer-icon use {
+                fill: $color-2;
+            }
+        }
+    }
+
+    &__link-developer-text {
+        @include adaptiv-font(16, 14);
+    }
+
+    &__link-developer-icon {
+        width: 20px;
+        height: 20px;
+
+        use {
+            fill: $color-8;
+            transition: fill $transition-time;
+        }
+    }
+
+    .logo {}
+
+    .social-network {}
 }
