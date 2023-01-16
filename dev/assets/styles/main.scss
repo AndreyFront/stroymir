@@ -1,0 +1,36 @@
+@import './fonts';
+@import './vars';
+@import './mixins';
+@import './settings';
+@import './classes';
+
+* {
+    box-sizing: border-box;
+    font-family: $main-font, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.2em;
+}
+
+html,
+body {
+    width: 100%;
+}
+
+.wrapper-page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    color: $main-color;
+    background-color: $color-1;
+}
+
+@import './parts/pages';
+@import './parts/layouts';
+@import './parts/components';
+@import './parts/ui';
+@import './parts/modal-windows';
+
+@import './libs';
+
+@import './media';

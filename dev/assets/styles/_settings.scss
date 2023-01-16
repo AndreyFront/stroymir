@@ -1,0 +1,72 @@
+@import '../../../node_modules/normalize.css/normalize';
+
+.dev {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 40px;
+
+    &__box-title {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    &__title {
+        text-transform: uppercase;
+        font-weight: 500;
+        letter-spacing: 1px;
+    }
+
+    &__sign {
+        @include adaptiv-font(23, 20);
+        font-weight: 500;
+        letter-spacing: 1px;
+        line-height: 1.5em;
+    }
+
+    &__box {
+        margin: 50px;
+    }
+
+    &__link {
+        position: relative;
+        font-size: 20px;
+        border-bottom: 1px solid;
+        border-bottom-color: transparent;
+        padding-left: 35px;
+        transition: border-bottom $transition-time;
+
+        &:hover {
+            border-bottom-color: #194fec;
+        }
+
+        &.desktop {
+            &::before {
+                content: '✔';
+                position: absolute;
+                left: 0;
+                top: 0;
+            }
+        }
+
+        &.mobile {
+            &::after {
+                content: '✔';
+                position: absolute;
+                left: 10px;
+                top: 0;
+            }
+        }
+    }
+
+    &--links {
+        flex-direction: column;
+        align-items: flex-start;
+
+        .dev {
+            &__box {
+                margin: 15px 0;
+            }
+        }
+    }
+}

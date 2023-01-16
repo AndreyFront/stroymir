@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    @include('./include/layouts/head.html', {
+        "title": "Name Project"
+    })
+</head>
+<body>
+    <main class="dev dev--links">
+        <div class="dev__box-title">
+            <h1 class="dev__title">Name Project</h1>
+        </div>
+
+        <!-- 
+            desktop - The desktop is made
+            mobile - Modalka made
+        -->
+
+        <div class="dev__box">
+            <span class="dev__sign">Title section</span>
+        </div>
+        <div class="dev__box">
+            <a href="./home.html" class="dev__link link-reset">Home</a> 
+        </div>
+    </main>
+    @include('./include/layouts/scripts.html')
+</body>
+</html>

@@ -1,0 +1,11 @@
+//Адаптивный шрифт
+
+@mixin adaptiv-font($pcSize, $mobSize) {
+    $addSize: $pcSize - $mobSize;
+    $maxWidth: $maxWidth - 375;
+    font-size: calc(
+        #{$mobSize + px} + #{$addSize} * ((100vw - 375px) / #{$maxWidth})
+    );
+}
+  
+// @include adaptiv-font(30, 16);

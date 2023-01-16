@@ -1,0 +1,40 @@
+{
+  "name": "101",
+  "version": "1.0.0",
+  "description": "Frontend",
+  "author": "",
+  "license": "Apache License",
+  "homepage": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "gulp"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.17.2",
+    "@babel/preset-env": "^7.16.11",
+    "babel-loader": "^8.2.3",
+    "browser-sync": "^2.27.7",
+    "del": "^6.0.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-file-include": "^2.3.0",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-if": "^3.0.0",
+    "gulp-imagemin": "^7.0.0",
+    "gulp-notify": "^4.0.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^5.1.0",
+    "gulp-svg-sprite": "^1.5.0",
+    "gulp-uglify": "^3.0.2",
+    "sass": "^1.51.0"
+  },
+  "dependencies": {
+    "imask": "^6.4.3",
+    "normalize.css": "^8.0.1",
+    "simplebar": "^5.3.9",
+    "swiper": "^8.4.5",
+    "validator": "^13.7.0"
+  }
+}

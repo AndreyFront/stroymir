@@ -1,0 +1,39 @@
+@import '_vars';
+@import '_mixins';
+
+.main-container {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.max-width {
+    max-width: 1440px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.scroll-lock {
+    overflow: hidden;
+}
+
+.hidden {
+    display: none;
+}
+
+a {
+    color: blue;
+}
+
+.title-reset {
+    margin: 0;
+}
+
+.link-reset {
+    text-decoration: none;
+}
+
+.list-reset {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
