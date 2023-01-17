@@ -1,0 +1,11 @@
+.block-title {
+    display: grid;
+    grid-template-columns: auto max-content;
+    align-items: center;
+    justify-content: space-between;
+    grid-column-gap: 20px;
+
+    .title {
+        margin-bottom: 0;
+    }
+}

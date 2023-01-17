@@ -1,0 +1,50 @@
+.banner {
+
+    &__slider {
+        min-height: 420px;
+        height: 100%;
+        background: rgba(235, 236, 236, 0.5);
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    &__block-banner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        padding: 40px 64px;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    &__picture,
+    &__picture * {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center right;
+    }
+
+    &__banner-content {
+        position: relative;
+        max-width: 570px;
+    }
+
+    &__sign {
+        font-weight: 500;
+        @include adaptiv-font(24, 12);
+        letter-spacing: -0.2px;
+        color: $color-11;
+    }
+
+    .title {
+        margin-bottom: 17px;
+    }
+
+    .social-network {
+        margin-top: 38px;
+    }
+}

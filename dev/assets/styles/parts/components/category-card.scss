@@ -1,0 +1,39 @@
+.category-card {
+    position: relative;
+    overflow: hidden;
+    padding: 24px;
+    height: 194px;
+    background-color: $color-1;
+    border-radius: 10px;
+    transition: background-color $transition-time;
+
+    &:hover {
+        background-color: $color-2;
+    }
+
+    &:hover .category-card__sign {
+        color: $color-1;
+    }
+
+    &__sign {
+        display: block;
+        max-width: 200px;
+        @include adaptiv-font(24, 16);
+        font-weight: 500;
+        letter-spacing: -0.2px;
+        color: $main-color;
+        transition: color $transition-time;
+    }
+
+    &__image {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        max-width: 190px;
+        max-height: 160px;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        object-position: bottom right;
+    }
+}

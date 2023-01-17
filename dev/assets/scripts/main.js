@@ -98,4 +98,111 @@ function footer() {
     }
 }
 
+function banner() {
+    const mains = document.querySelectorAll('[data-banner="main"]')
+
+    if (!mains.length) return
+
+    mains.forEach(main => {
+        const slider = main.querySelector('[data-banner="slider"]')
+        const pagination = main.querySelector('[data-banner="pagination"]')
+
+        const swiper = new Swiper(slider, {
+            pagination: {
+              el: pagination,
+              clickable: true
+            },
+        })
+    })
+}
+
+function cardSlider() {
+    const mains = document.querySelectorAll('[data-cards-slider="main"]')
+
+    if (!mains.length) return
+
+    mains.forEach(main => {
+        const slider = main.querySelector('[data-cards-slider="slider"]')
+        const btnPrev = main.querySelector('[data-cards-slider="btn-prev"]')
+        const btnNext = main.querySelector('[data-cards-slider="btn-next"]')
+
+        const swiper = new Swiper(slider, {
+            slidesPerView: 4,
+            spaceBetween: 40,
+            navigation: {
+                nextEl: btnNext,
+                prevEl: btnPrev,
+            },
+        })
+    })
+}
+
+function counter() {
+    const parentBlocks = document.querySelectorAll(`[data-counter="counter"]`)
+    if (!parentBlocks.length) return
+    parentBlocks.forEach(elem => {
+        const remove = elem.querySelector('[data-counter="remove"]')
+        const add = elem.querySelector('[data-counter="add"]')
+        const input = elem.querySelector('[data-counter="input"]')
+    
+        const max = +input.getAttribute('max')
+        const min = +input.getAttribute('min')
+    
+        const validInput = (value) => {
+            const inputValue = +value
+            switch (true) {
+                case inputValue <= min:
+                    input.value = min
+                    remove.setAttribute('disabled', '')
+                break
+                case inputValue >= max:
+                    input.value = max
+                    add.setAttribute('disabled', '')
+                break
+                default:
+                    remove.removeAttribute('disabled')
+                    add.removeAttribute('disabled')
+            }
+        }
+    
+        validInput(input.value)
+    
+        input.addEventListener('change', () => {
+            console.log(input.value)
+            validInput(input.value)
+        })
+    
+        add.addEventListener('click', () => {
+            input.value++
+            validInput(input.value)
+        })
+    
+        remove.addEventListener('click', () => {
+            input.value--
+            validInput(input.value)
+        })
+    })
+}
+
+function sCards() {
+    if (window.matchMedia("(max-width: 992px)").matches) {
+        const mains = document.querySelectorAll('[data-s-cards="main"]')
+
+        if (!mains.length) return
+    
+        mains.forEach(main => {
+            const slider = main.querySelector('[data-s-cards="slider"]')
+    
+            const swiper = new Swiper(slider, {
+                slidesPerView: 4,
+                spaceBetween: 40,
+            })
+        })
+    }
+}
+
 footer()
+banner()
+cardSlider()
+counter()
+sCards()

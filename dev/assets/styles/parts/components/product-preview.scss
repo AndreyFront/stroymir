@@ -1,0 +1,130 @@
+.product-preview {
+    position: relative;
+    padding: 56px 24px 24px 24px;
+    border: 1px solid $color-8;
+    background-color: $color-1;
+    border-radius: 16px;
+
+    &__block-image {
+        width: 214px;
+        height: 198px;
+        margin: 0 auto;
+
+        &:hover ~ .product-preview__title {
+            color: $color-2; 
+        }
+    }
+
+    &__image {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        object-position: center;
+    }
+
+    &__title {
+        display: block;
+        height: 50px;
+        text-transform: uppercase;
+        color: $main-color;
+        @include adaptiv-font(14, 12);
+        -webkit-line-clamp: 3; /* Число отображаемых строк */
+        display: -webkit-box; /* Включаем флексбоксы */
+        -webkit-box-orient: vertical; /* Вертикальная ориентация */
+        overflow: hidden;
+    }
+
+    &__wrap-price {
+        display: grid;
+        grid-template-columns: repeat(2, max-content);
+        align-items: center;
+        justify-content: space-between;
+        grid-column-gap: 10px;
+        margin-top: 12px;
+    }
+
+    &__block-price {
+        display: grid;
+    }
+
+    &__price {
+        font-weight: 800;
+        font-size: 22px;
+    }
+
+    &__old-price {
+        color: $color-14;
+        font-weight: 500;
+        font-size: 14px;
+        text-decoration: line-through;
+    }
+
+    &__block-control {
+        display: grid;
+        grid-template-columns: repeat(2, max-content);
+        grid-column-gap: 8px;
+    }
+
+    &__btn-cart {
+        display: grid;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background-color: #DE4F22;
+        border-radius: 10px;
+        transition: background-color $transition-time;
+
+        &:hover {
+            background-color: $color-3;
+        }
+    }
+
+    &__btn-cart-icon {
+        width: 24px;
+        height: 24px;
+    }
+
+    &__wrap-labels {
+        position: absolute;
+        top: 24px;
+        left: 0;
+        display: grid;
+        grid-row-gap: 4px;
+    }
+
+    &__wrap-actions {
+        position: absolute;
+        top: 24px;
+        right: 24px;
+        display: grid;
+        grid-template-columns: repeat(2, max-content);
+        grid-column-gap: 8px;
+    }
+
+    &__action {
+        display: block;
+        width: 24px;
+        height: 24px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        transition: background-image $transition-time;
+
+        &--compare {
+            background-image: url('../images/compare.svg');
+
+            &.active {
+                background-image: url('../images/compare-active.svg');
+            }
+        }
+
+        &--like {
+            background-image: url('../images/like.svg');
+
+            &.active {
+                background-image: url('../images/like-active.svg');
+            }
+        }
+    }
+}

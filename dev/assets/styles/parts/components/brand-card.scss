@@ -1,0 +1,23 @@
+.brand-card {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    grid-row-gap: 2px;
+    padding: 16px;
+    background: $color-1;
+    border-radius: 10px;
+
+    &__logo {
+        width: 130px;
+        height: 130px;
+        object-fit: contain;
+        object-position: center;
+        margin: 0 auto;
+    }
+
+    &__name {
+        text-align: center;
+        line-height: 1.3em;
+        min-height: 30px;
+    }
+}

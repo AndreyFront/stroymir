@@ -1,0 +1,125 @@
+.counter {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 85px;
+    height: 40px;
+    border: 1px solid $color-8;
+    border-radius: 10px;
+    background-color: $color-1;
+
+    // &.active-drop-out {
+    //     .counter__drop-out {
+    //         transform: translate(0, -50%);
+    //         opacity: 1;
+    //         visibility: visible;
+    //         pointer-events: auto;
+    //     }
+    // }
+
+    &__input,
+    &__btn {
+        height: 100%;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        padding: 0;
+    }
+
+    &__input {
+        width: 40%;
+        text-align: center;
+        font-size: 16px;
+        font-weight: 400;
+        color: $color-5;
+        transition: color $transition-time;
+
+        &[type="number"]::-webkit-outer-spin-button,
+        &[type="number"]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+    
+        &[type="number"] {
+            -moz-appearance: textfield;
+        }
+        &[type="number"]:hover,
+        &[type="number"]:focus {
+            -moz-appearance: number-input;
+        }
+    }
+
+    &__btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 30%;
+        height: 100%;
+        border-radius: 10px;
+        cursor: pointer;
+        background-color: $color-1;
+        transition: background-color $transition-time;
+
+        &:hover {
+            background-color: $color-2;
+        }
+
+        &:hover .counter__icon > use {
+            stroke: $color-1;
+        }
+
+        &:disabled {
+            cursor: default;
+            opacity: 0.5;
+            pointer-events: none;
+        }
+    }
+
+    &__icon {
+        width: 12px;
+        height: 12px;
+
+        use {
+            stroke: $color-5;
+            stroke-width: 2;
+            transition: stroke $transition-time;
+        }
+    }
+
+    &__drop-out {
+        position: absolute;
+        top: 50%;
+        left: calc(100% + 12px);
+        transform: translate(10px, -50%);
+        width: 115px;
+        padding: 8px 12px;
+        background-color: rgba(26, 26, 26, 0.9);
+        text-align: center;
+        box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.04), 0px 4px 32px rgba(0, 0, 0, 0.16);
+        border-radius: 10px;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: transform $transition-time, opacity $transition-time, visibility $transition-time;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            right: 100%;
+            transform: translateY(-50%);
+            width: 8px;
+            height: 20px;
+            background-image: url(../images/decore-label.svg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+        }
+    }
+
+    &__drop-out-text {
+        font-size: 14px;
+        color: $color-1;
+    }
+}

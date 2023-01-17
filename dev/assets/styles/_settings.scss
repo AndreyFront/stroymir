@@ -34,10 +34,12 @@
         border-bottom: 1px solid;
         border-bottom-color: transparent;
         padding-left: 35px;
-        transition: border-bottom $transition-time;
+        color: #5B5B5B;
+        transition: border-bottom $transition-time, color $transition-time;
 
         &:hover {
-            border-bottom-color: #194fec;
+            color: #DE4F22;
+            border-bottom-color: #DE4F22;
         }
 
         &.desktop {

@@ -12,6 +12,24 @@
     padding-right: 20px;
 }
 
+.section {
+    padding-top: 27px;
+    padding-bottom: 27px;
+
+    &--theme--primary {
+        background-color: $color-1;
+    }
+
+    &--theme--secondary {
+        background-color: $color-10;
+    }
+
+    .title,
+    .block-title {
+        margin-bottom: 24px;
+    }
+}
+
 .scroll-lock {
     overflow: hidden;
 }

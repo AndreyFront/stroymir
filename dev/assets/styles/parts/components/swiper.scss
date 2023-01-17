@@ -1,0 +1,30 @@
+body {
+    .swiper {
+        .swiper-horizontal > .swiper-pagination-bullets, 
+        .swiper-pagination-bullets.swiper-pagination-horizontal {
+            display: grid;
+            grid-auto-columns: max-content;
+            grid-auto-flow: column;
+            justify-content: center;
+            grid-column-gap: 9px;
+            bottom: 24px;
+        }
+
+        .swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
+        .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+            margin: 0;
+        }
+
+        .swiper-pagination-bullet {
+            width: 12px;
+            height: 12px;
+            background-color: $color-12;
+            opacity: 1;
+            transition: background-color $transition-time;
+
+            &.swiper-pagination-bullet-active {
+                background-color: $color-2;
+            }
+        }
+    }
+}

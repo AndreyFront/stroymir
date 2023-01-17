@@ -8,9 +8,18 @@
     <body>
         <div class="wrapper-page">
             @include('./include/layouts/header.html')
-            <main class="page main-page">
-                <!-- @include('./include/components/name.html') -->
-                <h2>Main</h2>
+            <main class="page">
+                <div class="main-page">
+                    <!-- @include('./include/components/name.html') -->
+
+                    @include('./include/components/banner.html')
+                    @include('./include/components/categories.html')
+                    @include('./include/components/s-cards.html')
+                    @include('./include/components/cards-slider.html')
+                    @include('./include/components/brands.html')
+                    @include('./include/components/we-are.html')
+                    @include('./include/components/advantages.html')
+                </div>
             </main>
             @include('./include/layouts/footer.html')
             @include('./include/layouts/scripts.html')

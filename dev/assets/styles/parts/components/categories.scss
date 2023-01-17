@@ -1,0 +1,10 @@
+.categories {
+    padding: 32px 0;
+    background-color: $color-10;
+
+    .main-container {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(200px, 1fr));
+        grid-column-gap: 16px;
+    }
+}

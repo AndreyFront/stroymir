@@ -1,0 +1,21 @@
+.label {
+    width: 102px;
+    padding: 5px 14px;
+    border-radius: 0px 4px 4px 0px;
+    background-color: $color-2;
+    text-align: center;
+
+    &--hit {
+        background-color: $color-6;
+    }
+
+    &--discount {
+        background-color: $color-7;
+    }
+
+    &__sign {
+        color: $color-1;
+        @include adaptiv-font(16, 12);
+        font-weight: 600;
+    }
+}
