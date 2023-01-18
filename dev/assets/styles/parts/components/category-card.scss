@@ -16,6 +16,8 @@
     }
 
     &__sign {
+        position: relative;
+        z-index: 1;
         display: block;
         max-width: 200px;
         @include adaptiv-font(24, 16);

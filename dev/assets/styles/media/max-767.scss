@@ -140,4 +140,41 @@
             height: 16px;
         }
     }
+
+    .promotion-card {
+        &__block-image {
+            width: 220px;
+            height: 190px;
+        }
+    }
+
+    .brand-card {
+        padding: 18px;
+
+        &__name {
+            display: none;
+        }
+
+        &__logo {
+            width: 70px;
+            height: 70px;
+        }
+    }
+
+    .product-preview {
+        &__block-image {
+            width: 150px;
+            height: 120px;
+        }
+
+        &__wrap-price {
+            grid-template-columns: 1fr;
+            grid-row-gap: 8px;
+        }
+
+        &__block-price {
+            height: 40px;
+            align-items: center;
+        }
+    }
 }

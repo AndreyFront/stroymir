@@ -1,1 +1,124 @@
-@media screen and (max-width: 576px) {}
+@media screen and (max-width: 576px) {
+    .section {
+        padding-top: 12px;
+        padding-bottom: 12px;
+
+        .title,
+        .block-title {
+            margin-bottom: 16px;
+        }
+    }
+
+    .advantages {
+        &__li {
+            grid-column-gap: 8px;
+        }
+
+        &__icon {
+            width: 32px;
+            height: 32px;
+        }
+    }
+
+    .promotion-card {
+        padding: 24px 16px;
+
+        &__title {
+            margin-top: 16px;
+            max-width: 186px;
+        }
+
+        &__link {
+            margin-top: 20px;
+        }
+
+        &__link-title {
+            display: none;
+        }
+
+        &__block-image {
+            width: 150px;
+            height: 128px;
+        }
+
+        &__link-block-icon {
+            width: 32px;
+            height: 32px;
+        }
+
+        &__link-icon {
+            width: 12px;
+            height: 12px;
+        }
+    }
+
+    .brands {
+        &__wrap-cards {
+            grid-column-gap: 8px;
+            grid-row-gap: 8px;
+        }
+    }
+
+    .cards-slider {
+
+        .box-arrows {
+            display: none;
+        }
+    }
+
+    .product-preview {
+        padding: 40px 8px 8px 8px;
+        border-radius: 6px;
+
+        &__block-image {
+            width: 104px;
+            height: 96px;
+        }
+
+        &__wrap-price {
+            margin-top: 8px;
+        }
+
+        &__wrap-labels {
+            top: 8px;
+        }
+
+        &__wrap-actions {
+            top: 8px;
+            right: 8px;
+        }
+
+        &__title {
+            height: 28px;
+            -webkit-line-clamp: 2;
+        }
+
+        .label {
+            width: max-content;
+        }
+    }
+
+    .categories {
+        padding: 16px 0;
+    }
+
+    .banner {
+
+        &__banner-content {
+            max-width: 278px;
+        }
+
+        &__sign {
+            display: block;
+            max-width: 140px;line-height: 1.3em;
+        }
+
+        &.section .title {
+            margin-bottom: 8px;
+        }
+
+        .social-network {
+            margin-top: 24px;
+        }
+    }
+}

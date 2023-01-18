@@ -5,4 +5,54 @@
             grid-row-gap: 25px;
         }
     }
+
+    .advantages {
+        &__list {
+            grid-template-columns: repeat(2, 1fr);
+            grid-column-gap: 30px;
+            grid-row-gap: 20px;
+        }
+    }
+
+    .stocks {
+        &__wrap-cards {
+            grid-template-columns: 1fr;
+            grid-row-gap: 8px;
+        }
+    }
+
+    .brands {
+        &__wrap-cards {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    .s-cards {
+        .swiper-wrapper {
+            display: flex;
+            grid-column-gap: 0;
+        }
+    }
+
+    .category-card {
+        padding: 16px;
+    }
+
+    .banner {
+
+        &__slider {
+            min-height: 376px;
+        }
+    
+        &__block-banner {
+            min-height: 376px;
+            padding: 16px;
+        }
+
+        .social-network {
+            grid-auto-columns: max-content;
+            grid-auto-flow: row;
+            grid-row-gap: 13px;
+        }
+    }
 }

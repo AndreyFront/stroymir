@@ -1,1 +1,7 @@
-@media screen and (max-width: 1440px) {}
+@media screen and (max-width: 1440px) {
+    .s-cards {
+        .swiper-wrapper {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+}

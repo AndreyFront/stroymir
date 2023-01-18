@@ -6,6 +6,7 @@
     border-radius: 16px;
 
     &__block-image {
+        display: block;
         width: 214px;
         height: 198px;
         margin: 0 auto;
@@ -24,13 +25,13 @@
 
     &__title {
         display: block;
-        height: 50px;
+        height: 48px;
         text-transform: uppercase;
         color: $main-color;
         @include adaptiv-font(14, 12);
-        -webkit-line-clamp: 3; /* Число отображаемых строк */
-        display: -webkit-box; /* Включаем флексбоксы */
-        -webkit-box-orient: vertical; /* Вертикальная ориентация */
+        -webkit-line-clamp: 3;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
         overflow: hidden;
     }
 

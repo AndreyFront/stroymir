@@ -1,1 +1,28 @@
-@media screen and (max-width: 1200px) {}
+@media screen and (max-width: 1200px) {
+    .advantages {
+        &__list {
+            grid-column-gap: 60px;
+        }
+    }
+
+    .s-cards {
+        .swiper-wrapper {
+            grid-column-gap: 20px;
+            grid-row-gap: 20px;
+        }
+    }
+
+    .categories {
+        .main-container {
+            overflow-x: auto;
+        }
+    } 
+
+    .category-card {
+
+        &__image {
+            width: 172px;
+            height: 124px;
+        }
+    }
+}

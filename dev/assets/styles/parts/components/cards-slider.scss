@@ -1,1 +1,12 @@
-.cards-slider {}
+.cards-slider {
+
+    &.section {
+        .title {
+            margin-bottom: 0;
+        }
+    }
+
+    .product-preview {
+        height: 100%;
+    }
+}

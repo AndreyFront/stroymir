@@ -123,17 +123,36 @@ function cardSlider() {
 
     mains.forEach(main => {
         const slider = main.querySelector('[data-cards-slider="slider"]')
+        const slides = slider.querySelectorAll('.swiper-slide')
         const btnPrev = main.querySelector('[data-cards-slider="btn-prev"]')
         const btnNext = main.querySelector('[data-cards-slider="btn-next"]')
 
         const swiper = new Swiper(slider, {
-            slidesPerView: 4,
-            spaceBetween: 40,
+            slidesPerView: 2.15,
+            spaceBetween: 8,
             navigation: {
                 nextEl: btnNext,
                 prevEl: btnPrev,
             },
+            breakpoints: {
+                1440: {
+                    slidesPerView: 4,
+                    spaceBetween: 40,
+                },
+                992: {
+                    slidesPerView: 3,
+                    spaceBetween: 40,
+                },
+                576: {
+                    slidesPerView: 2.2,
+                    spaceBetween: 20,
+                },
+            }
         })
+
+        const heightSlider = slider.offsetHeight
+
+        slides.forEach(slide => slide.style.height = `${heightSlider}px`)
     })
 }
 
@@ -194,8 +213,18 @@ function sCards() {
             const slider = main.querySelector('[data-s-cards="slider"]')
     
             const swiper = new Swiper(slider, {
-                slidesPerView: 4,
-                spaceBetween: 40,
+                slidesPerView: 2.15,
+                spaceBetween: 8,
+                breakpoints: {
+                    992: {
+                        slidesPerView: 3,
+                        spaceBetween: 40,
+                    },
+                    576: {
+                        slidesPerView: 2.2,
+                        spaceBetween: 20,
+                    },
+                }
             })
         })
     }

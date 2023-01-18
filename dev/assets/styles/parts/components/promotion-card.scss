@@ -1,0 +1,115 @@
+.promotion-card {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    padding: 48px 32px;
+    border-radius: 16px;
+
+    &:hover::before {
+        transform: translate(30%, 22%);
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 580px;
+        height: 506px;
+        transform: translate(25%, 20%);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        pointer-events: none;
+        transition: transform $transition-time;
+    }
+
+    &--theme--primary {
+        background-color: $color-2;
+
+        &::before {
+            background-image: url('../images/glow-1.png');
+        }
+    }
+
+    &--theme--secondary {
+        background-color: $color-9;
+
+        &::before {
+            background-image: url('../images/glow-2.png');
+        }
+    }
+
+    &__wrap-info {
+        position: relative;
+        z-index: 1;
+        display: grid;
+    }
+
+    &__sign,
+    &__title {
+        color: $color-1;
+    }
+
+    &__sign {
+        @include adaptiv-font(24, 12);
+        font-weight: 500;
+    }
+
+    &__title {
+        margin-top: 33px;
+        max-width: 370px;
+        font-weight: 600;
+        @include adaptiv-font(40, 20);
+        line-height: 1.35em;
+    }
+
+    &__link {
+        display: grid;
+        grid-template-columns: auto max-content;
+        grid-column-gap: 16px;
+        align-items: center;
+        width: max-content;
+        margin-top: 64px;
+    }
+
+    &__link-title {
+        text-transform: uppercase;
+        letter-spacing: 0.02em;
+        color: $color-1;
+    }
+
+    &__link-block-icon {
+        display: grid;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border: 1px solid $color-1;
+        border-radius: 10px;
+    }
+
+    &__link-icon {
+        width: 14px;
+        height: 14px;
+
+        use {
+            stroke: $color-1;
+        }
+    }
+
+    &__block-image {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 318px;
+        height: 274px;
+    }
+
+    &__image {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        object-position: bottom right;
+    }
+}
