@@ -2,25 +2,19 @@
 <html lang="ru">
     <head>
         @include('./include/layouts/head.html', {
-            "title": "Главная"
+            "title": "Страница не найдена"
         })
     </head>
     <body>
         <div class="wrapper-page">
             @include('./include/layouts/header.html')
             <main class="page">
-                <div class="main-page">
+                <div class="page-not-found-page">
                     <!-- @include('./include/components/name.html') -->
 
-                    @include('./include/components/banner.html')
-                    @include('./include/components/categories.html')
-                    @include('./include/components/s-cards.html')
-                    @include('./include/components/cards-slider.html')
-                    @include('./include/components/brands.html')
-                    @include('./include/components/stocks.html')
-                    @include('./include/components/we-are.html')
+                    @include('./include/components/page-not-found.html')
                     @include('./include/components/advantages.html')
-                    
+
                 </div>
             </main>
             @include('./include/layouts/footer.html')

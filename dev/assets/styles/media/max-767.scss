@@ -142,6 +142,15 @@
     }
 
     .promotion-card {
+
+        &:hover::before {
+            transform: translate(55%, 51%);
+        }
+
+        &::before {
+            transform: translate(50%, 50%);
+        }
+
         &__block-image {
             width: 220px;
             height: 190px;

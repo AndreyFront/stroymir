@@ -23,6 +23,16 @@
     .promotion-card {
         padding: 24px 16px;
 
+        &:hover::before {
+            transform: translate(40%, 20%);
+        }
+
+        &::before {
+            width: 290px;
+            height: 253px;
+            transform: translate(35%, 15%);
+        }
+
         &__title {
             margin-top: 16px;
             max-width: 186px;
