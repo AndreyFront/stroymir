@@ -230,8 +230,26 @@ function sCards() {
     }
 }
 
+function search() {
+    const main = document.querySelector('[data-search="main"]')
+
+    if (!main) return
+
+    document.addEventListener('click', (event) => {
+        const el = event.target
+        if (el.closest('[data-search="main"]')) {
+            if (el.closest('[data-search="input"]')) {
+                main.classList.toggle('active')
+            }
+        } else {
+            main.classList.remove('active')
+        }
+    })
+}
+
 footer()
 banner()
 cardSlider()
 counter()
 sCards()
+search()

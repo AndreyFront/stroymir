@@ -1,0 +1,71 @@
+.menu {
+    display: grid;
+    grid-auto-columns: max-content;
+    grid-auto-flow: column;
+    grid-column-gap: 48px;
+
+    &__link {
+        display: grid;
+        justify-content: center;
+
+        &:hover .menu__icon use {
+            stroke: $color-2;
+        }
+
+        &:hover .menu__link-text {
+            color: $color-2;
+        }
+
+        &:nth-child(1) .menu__icon use {
+            stroke-width: 2;
+        }
+
+        &:nth-child(2) .menu__icon use {
+            stroke-width: 0.7;
+        }
+    }
+
+    &__block-icon {
+        position: relative;
+        width: max-content;
+        margin: 0 auto;
+    }
+
+    &__icon {
+        width: 24px;
+        height: 24px;
+
+        use {
+            stroke: $main-color;
+            stroke-width: 1.5;
+            transition: stroke $transition-time;
+        }
+    }
+
+    &__label-quantity {
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: grid;
+        align-items: center;
+        justify-content: center;
+        width: 18px;
+        height: 18px;
+        border-radius: 100%;
+        border: 1px solid $color-1;
+        font-size: 10px;
+        font-weight: 700;
+        background-color: $color-2;
+        color: $color-1;
+        line-height: 1em;
+        transform: translate(25%, -25%);
+    }
+
+    &__link-text {
+        font-size: 16px;
+        line-height: 1.4em;
+        color: $main-color;
+        text-align: center;
+        transition: color $transition-time;
+    }
+}

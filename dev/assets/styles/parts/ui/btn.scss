@@ -1,0 +1,123 @@
+
+
+.btn {
+    position: relative;
+    display: grid;
+    grid-auto-columns: auto;
+    grid-auto-flow: column;
+    justify-content: center;
+    align-items: center;
+    grid-column-gap: 8px;
+    width: max-content;
+    height: 48px;
+    padding: 5px 16px;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    cursor: pointer;
+    border: 1px solid;
+    border-color: transparent;
+    border-radius: 10px;
+    transition: background-color $transition-time, border-color $transition-time;
+
+    &[disabled] {
+        pointer-events: none;
+        opacity: 0.6;
+    }
+
+    &__text {
+        font-size: 18px;
+        font-weight: 600;
+        transition: color $transition-time;
+    }
+
+    &__icon {
+        width: 24px;
+        height: 24px;
+
+        use {
+            stroke-width: 2;
+            transition: stroke $transition-time;
+        }
+    }
+
+    &--theme--primary {
+        border-color: $color-2;
+        background-color: $color-2;
+
+        &:hover {
+            border-color: $color-3;
+            background-color: $color-3;
+        }
+
+        .btn {
+            &__text {
+                color: $color-1;
+            }
+
+            &__icon {
+
+                use {
+                    stroke: $color-1;
+                }
+            }
+        }
+    }
+
+    &--theme--secondary {
+        border-color: $main-color;
+        background-color: $main-color;
+
+        &:hover {
+            border-color: $main-color;
+            background-color: $main-color;
+        }
+
+        .btn {
+            &__text {
+                color: $color-1;
+            }
+
+            &__icon {
+
+                use {
+                    stroke: $color-1;
+                }
+            }
+        }
+    }
+
+    &--theme--tertiary {
+        border-color: $color-8;
+        background-color: $color-8;
+
+        &:hover {
+            .btn {
+                &__text {
+                    color: $color-3;
+                }
+
+                &__icon {
+
+                    use {
+                        stroke: $color-3;
+                    }
+                }
+            }
+        }
+
+        .btn {
+            &__text {
+                color: $main-color;
+            }
+
+            &__icon {
+
+                use {
+                    stroke: $main-color;
+                }
+            }
+        }
+    }
+}

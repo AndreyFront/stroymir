@@ -4,10 +4,11 @@
 
     &__wrap-nav {
         display: grid;
-        grid-auto-columns: max-content;
+        grid-template-columns: repeat(2, max-content) auto;
         grid-auto-flow: column;
         align-items: center;
         grid-column-gap: 48px;
+        padding-top: 19px;
 
         .header__link {
             justify-self: end;
@@ -18,20 +19,57 @@
 
     &__nav-list {
         display: grid;
-        grid-auto-columns: repeat(max-content) auto;
+        grid-auto-columns: max-content;
         grid-auto-flow: column;
-        grid-template-columns: 48px;
+        grid-column-gap: 48px;
     }
 
     &__nav-li {}
 
     &__nav-link {
-        display: inline-block;
         color: $main-color;
         white-space: nowrap;
     }
 
     &__link {
         color: $color-5;
+    }
+
+    &__wrap-info {
+        display: grid;
+        grid-template-columns: max-content minmax(200px, 794px) auto;
+        grid-column-gap: 8px;
+        padding: 24px 0;
+    }
+
+    &__wrap-links {}
+
+    &__links-list {
+        display: grid;
+        grid-auto-columns: max-content;
+        grid-auto-flow: column;
+        align-items: center;
+        justify-content: space-between;
+        grid-column-gap: 16px;
+        overflow-y: auto;
+    }
+
+    &__links-li {}
+
+    &__links-link {
+        color: $main-color;
+        font-size: 14px;
+        text-transform: uppercase;
+
+        b {
+            font-weight: 400;
+            color: $color-2;
+            font-size: 14px;
+            text-transform: uppercase;
+        }
+    }
+
+    .menu {
+        margin-left: auto;
     }
 }
