@@ -1,3 +1,37 @@
 .header {
     flex: 0 0 auto;
+    background-color: $color-1;
+
+    &__wrap-nav {
+        display: grid;
+        grid-auto-columns: max-content;
+        grid-auto-flow: column;
+        align-items: center;
+        grid-column-gap: 48px;
+
+        .header__link {
+            justify-self: end;
+        }
+    }
+
+    &__nav {}
+
+    &__nav-list {
+        display: grid;
+        grid-auto-columns: repeat(max-content) auto;
+        grid-auto-flow: column;
+        grid-template-columns: 48px;
+    }
+
+    &__nav-li {}
+
+    &__nav-link {
+        display: inline-block;
+        color: $main-color;
+        white-space: nowrap;
+    }
+
+    &__link {
+        color: $color-5;
+    }
 }
