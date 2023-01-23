@@ -1,0 +1,45 @@
+.form {
+    padding: 24px;
+    width: 355px;
+    border: 1px solid $color-8;
+    border-radius: 10px;
+    background-color: $color-1;
+
+    &__form {}
+
+    &__title {
+        font-weight: 600;
+        font-size: 24px;
+        letter-spacing: -0.2px;
+    }
+
+    &__wrap-fields {
+        display: grid;
+        grid-row-gap: 8px;
+        margin-top: 20px;
+    }
+
+    &__privacy-policy .checkbox__text,
+    &__privacy-policy .checkbox__text a {
+        @include adaptiv-font(14, 12);   
+    }
+
+    &__privacy-policy {
+        margin-top: 24px;
+
+        .checkbox {
+            &__text {
+                color: $color-9;
+
+                a {
+                    color: $color-2;
+                }
+            }
+        }
+    }
+
+    .btn {
+        width: 100%;
+        margin-top: 24px;
+    }
+}

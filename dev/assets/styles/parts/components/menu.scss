@@ -3,10 +3,21 @@
     grid-auto-columns: max-content;
     grid-auto-flow: column;
     grid-column-gap: 48px;
+    background-color: $color-1;
 
-    &__link {
+    &__block-link {
+        position: relative;
         display: grid;
         justify-content: center;
+
+        &.active {
+            .menu__dropdown {
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
+                pointer-events: auto;
+            }
+        }
 
         &:hover .menu__icon use {
             stroke: $color-2;
@@ -62,10 +73,88 @@
     }
 
     &__link-text {
-        font-size: 16px;
+        @include adaptiv-font(16, 12);
         line-height: 1.4em;
         color: $main-color;
         text-align: center;
         transition: color $transition-time;
+    }
+
+    &__dropdown {
+        position: absolute;
+        z-index: 12;
+        top: calc(100% + 11px);
+        right: 0;
+        width: 360px;
+        background-color: $color-1;
+        border-radius: 16px;
+        box-shadow: 0px 0px 8px 0px rgba(34, 60, 80, 0.2);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(5px);
+        pointer-events: none;
+        transition: opacity $transition-time, visibility $transition-time, transform $transition-time;
+
+        &::before {
+            content: ''; 
+            position: absolute;
+            bottom: 100%;
+            right: 40px;
+            border: 10px solid transparent; 
+            border-bottom: 10px solid $color-1;
+        }
+    }
+
+    &__dropdown-list {
+        position: relative;
+        padding: 16px;
+        max-height: 150px;
+        width: 100%;
+        overflow-y: auto;
+
+        .simplebar-content {
+            display: grid;
+        }
+    }
+
+    &__dropdown-li {
+
+        &:not(:first-child) {
+            margin-top: 16px;
+        }
+    }
+
+    &__dropdown-product {
+        display: grid;
+        grid-template-columns: max-content auto;
+        grid-column-gap: 16px;
+
+        &:hover .menu__dropdown-product-name {
+            color: $color-2;
+        }
+    }
+
+    &__dropdown-product-image {
+        width: 64px;
+        height: 64px;
+        object-fit: contain;
+        object-position: center;
+    }
+
+    &__dropdown-product-name {
+        font-size: 12px;
+        line-height: 1.6em;
+        color: $main-color;
+        transition: color $transition-time;
+    }
+
+    &__dropdown-block-btn {
+        padding: 16px;
+        border-top: 1px solid #F1F2F2;
+        border-radius: 0px 0px 16px 16px;
+    }
+
+    .btn {
+        width: 100%;
     }
 }

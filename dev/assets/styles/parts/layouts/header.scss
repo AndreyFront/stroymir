@@ -1,6 +1,29 @@
 .header {
     flex: 0 0 auto;
+    position: fixed;
+    z-index: 11;
+    top: 0;
+    left: 0;
+    width: 100%;
     background-color: $color-1;
+
+    &--fixed {
+        .header {
+            &__wrap-nav,
+            &__wrap-links {
+                height: 0px;
+                padding: 0;
+                opacity: 0;
+                overflow: hidden;
+                pointer-events: none;
+            }
+        }
+    }
+
+    &__wrap-nav,
+    &__wrap-links {
+        transition: height 0.3s, padding 0.3s, opacity 0.3s;
+    }
 
     &__wrap-nav {
         display: grid;
@@ -9,6 +32,7 @@
         align-items: center;
         grid-column-gap: 48px;
         padding-top: 19px;
+        height: 48px;
 
         .header__link {
             justify-self: end;
@@ -42,7 +66,16 @@
         padding: 24px 0;
     }
 
-    &__wrap-links {}
+    &__btn-catalog {
+        .btn__icon {
+            display: none;
+        }
+    }
+
+    &__wrap-links {
+        padding-bottom: 24px;
+        height: 43px;
+    }
 
     &__links-list {
         display: grid;
@@ -71,5 +104,6 @@
 
     .menu {
         margin-left: auto;
+        padding-left: 20px;
     }
 }

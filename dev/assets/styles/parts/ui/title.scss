@@ -6,14 +6,17 @@
     }
 
     &--h1,
+    &--h2 {
+        font-weight: 600;
+    }
+
+    &--h1,
     &--h1 b {
-        @include adaptiv-font(96, 48);
-        font-weight: 800;
+        @include adaptiv-font(40, 24);
     }
 
     &--h2,
     &--h2 b {
         @include adaptiv-font(32, 24);
-        font-weight: 600;
     }
 }

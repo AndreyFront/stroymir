@@ -60,3 +60,17 @@ a {
     padding: 0;
     list-style-type: none;
 }
+
+.bifurcation {
+    display: grid;
+    grid-template-columns: minmax(750px, 947px) max-content;
+    justify-content: space-between;
+    grid-column-gap: 40px;
+    align-items: start;
+
+    .form {
+        position: sticky;
+        top: 110px;
+        margin-top: 60px;
+    }
+}

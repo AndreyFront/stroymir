@@ -1,0 +1,98 @@
+.checkbox {
+
+    &[disabled] {
+        opacity: 0.6;
+        pointer-events: none;
+
+        .checkbox {
+            &__decore::before {
+                background-color: $color-8;
+                border-color: $color-8;
+            }
+        }
+    }
+
+    &:not([disabled]):hover > &__label &__text {
+        color: $main-color;
+        cursor: pointer;
+    }
+
+    &.active {
+        .checkbox {
+            &__decore::before {
+                background-color: $color-2;
+                border-color: $color-2;
+            }
+    
+            &__decore::after {
+                opacity: 1;
+            }
+        }
+    }
+
+    &__label {
+        position: relative;
+        display: grid;
+        padding-left: 28px;
+    }
+
+    &__input {
+        position: absolute;
+        z-index: -1;
+        opacity: 0;
+        display: none;
+
+        &:checked ~ .checkbox__decore::before {
+            background-color: $color-2;
+            border-color: $color-2;
+        }
+
+        &:checked ~ .checkbox__decore::after {
+            opacity: 1;
+        }
+    }
+
+    &__text {
+        font-size: 16px;
+        color: $main-color;
+        line-height: 1.4em;
+        transition: color $transition-time;
+    }
+
+    &__decore {
+        position: absolute;
+        left: 0;
+        top: 5px;
+        width: 20px;
+        height: 20px;
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 3px;
+        }
+
+        &::before {
+            width: 20px;
+            height: 20px;
+            border: 1px solid $color-9;
+            background-color: $color-1;
+            transition: border-color $transition-time, background-color $transition-time;
+        }
+
+        &::after {
+            width: 12px;
+            height: 12px;
+            background-image: url('../images/tick.svg');
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+            opacity: 0;
+            transition: opacity $transition-time;
+        }
+    }
+}

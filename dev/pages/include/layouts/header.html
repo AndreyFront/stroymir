@@ -1,4 +1,4 @@
-<header class="header">
+<header class="header" data-header="main">
     <div class="main-container max-width">
         <div class="header__wrap-nav">
             <a href="##" class="logo">
@@ -23,7 +23,10 @@
             <a href="tel:79180311188" class="header__link link-reset">+7 (918) 03-111-88</a>
         </div>
         <div class="header__wrap-info">
-            <a href="#" class="btn btn--theme--primary">
+            <a href="#" class="btn btn--theme--primary header__btn-catalog">
+                <svg class="btn__icon">
+                    <use xlink:href="./assets/icons/sprite-svg.svg#menu-catalog"/>
+                </svg>
                 <span class="btn__text">Каталог</span>
             </a>
             @include('../ui/search.html')

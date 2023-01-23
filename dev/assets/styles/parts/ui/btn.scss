@@ -23,7 +23,21 @@
 
     &[disabled] {
         pointer-events: none;
-        opacity: 0.6;
+        border-color: $color-8;
+        background-color: $color-8;
+
+        .btn {
+            &__text {
+                color: $color-9;
+            }
+
+            &__icon {
+
+                use {
+                    stroke: $color-9;
+                }
+            }
+        }
     }
 
     &__text {
@@ -72,6 +86,10 @@
         &:hover {
             border-color: $main-color;
             background-color: $main-color;
+        }
+
+        &:hover .btn__text {
+            color: $color-9;
         }
 
         .btn {

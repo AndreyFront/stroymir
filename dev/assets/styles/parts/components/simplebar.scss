@@ -1,0 +1,33 @@
+body {
+    [data-scrollbar] {
+        padding-right: 15px;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+    
+    .simplebar-scrollbar.simplebar-visible {
+        &::before {
+            opacity: 1 !important;
+            border-radius: 10px;
+            background: $color-12;
+        }
+    }
+    
+    .simplebar-scrollbar:before {
+        left: 0px !important;
+        right: 4px !important;
+    }
+    
+    .simplebar-track.simplebar-vertical .simplebar-scrollbar:before {
+        top: 16px !important;
+        bottom: 16px !important;
+    }
+
+    .simplebar-track.simplebar-vertical {
+        width: 8px;
+    }
+}

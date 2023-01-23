@@ -1,0 +1,46 @@
+.delivery-payment {
+
+    &__wrap-info {
+        display: grid;
+        grid-row-gap: 48px;
+    }
+
+    &__inner-info {}
+
+    &__wrap-boxes-info {
+        display: grid;
+        grid-row-gap: 16px;
+    }
+
+    &__box-info {
+        display: grid;
+        grid-row-gap: 8px;
+        padding: 32px;
+        background-color: $color-4;
+        border-radius: 10px;
+    }
+
+    &__box-info-title,
+    &__box-info-description,
+    &__box-info-important {
+        @include adaptiv-font(18, 16);
+        line-height: 1.7em;
+    }
+
+    &__box-info-title {
+        font-weight: 600;
+    }
+
+    &__box-info-description {
+        margin-top: 8px;
+        max-width: 645px;
+    }
+
+    &__box-info-important {
+        color: $color-2;
+    }
+
+    .bifurcation {
+        padding-top: 24px;
+    }
+}

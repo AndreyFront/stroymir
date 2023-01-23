@@ -1,4 +1,44 @@
 @media screen and (max-width: 992px) {
+    .header {
+
+        &--fixed {
+            .header {
+                &__wrap-links {
+                    height: 0px;
+                    padding: 0;
+                    opacity: 0;
+                    overflow: hidden;
+                    pointer-events: none;
+                }
+
+                &__wrap-nav {
+                    height: max-content;
+                    padding-top: 19px;
+                    opacity: 1;
+                    overflow: visible;
+                    pointer-events: auto;
+                }
+            }
+        }
+
+        &__wrap-nav {
+            grid-template-columns: max-content auto;
+            height: max-content;
+        }
+
+        &__nav {
+            display: none;
+        }
+
+        &__wrap-info {
+            grid-template-columns: max-content 1fr;
+        }
+
+        .search {
+            max-width: 100%;
+        }
+    }
+
     .footer {
         &__wrap-links {
             grid-template-columns: 1fr;
@@ -53,6 +93,58 @@
             grid-auto-columns: max-content;
             grid-auto-flow: row;
             grid-row-gap: 13px;
+        }
+    }
+
+    .bread-crumbs {
+        display: none;
+    }
+    
+    .menu {
+        position: fixed;
+        z-index: 11;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 20px;
+        justify-content: space-between;
+
+        &__dropdown {
+            display: none;
+        }
+    }
+
+    .page-not-found {
+        &__block-image {
+            width: 222px;
+            height: 87px;
+        }
+
+        &__block-info {
+            margin-top: 40px;
+            grid-row-gap: 8px;
+        }
+
+        &__block-btns {
+            grid-template-columns: minmax(200px, 335px);
+            grid-row-gap: 8px;
+            margin-top: 48px;
+
+            .btn {
+                width: 100%;
+            }
+        }
+    }
+
+    .contacts {
+        &__wrap-content {
+            grid-template-columns: 1fr;
+            grid-row-gap: 8px;
+        }
+
+        &__block-map {
+            height: 350px;
+            min-height: max-content;
         }
     }
 }

@@ -1,0 +1,37 @@
+.privacy-policy {
+
+    &__block-text {
+        display: grid;
+        grid-row-gap: 56px;
+        padding: 32px;
+        background-color: $color-4;
+        border-radius: 10px;
+
+        div {
+
+            p {
+               margin: 16px 0 0 0;
+            }
+        }
+
+        p, a {
+            font-size: 16px;
+            line-height: 1.4em;
+        }
+
+        a {
+            color: $main-color;
+            
+            &:hover {
+                color: $color-2;
+            }
+        }
+
+        h2 {
+            margin: 0;
+            @include adaptiv-font(32, 24);
+            line-height: 1.1em;
+            font-weight: 600;
+        }
+    }
+}

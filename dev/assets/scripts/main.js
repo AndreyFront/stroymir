@@ -52,6 +52,180 @@ function smoothView(btn, el, startHeight = 0) {
     })
 }
 
+function validateForm() {
+    const forms = document.querySelectorAll('[data-validate-form]')
+
+    if (!forms.length) return
+
+    let needValidate = false
+
+    document.addEventListener('click', (event) => {
+        const el = event.target
+
+        if (el.closest('[data-validate-form]')) {
+            const form = el.closest('[data-validate-form]')
+            const inputs = form.querySelectorAll('.input')
+            const regExpName = /^[A-ZА-ЯЁ]+$/i
+
+            const validate = () => {
+                if (inputs.length) {
+                    inputs.forEach(elInput => {
+                        const input = elInput
+
+                        if (input.hasAttribute('required')) {
+                            const type = input.getAttribute('data-input-type')
+
+                            if (input.value) {
+                                const value = input.value
+
+                                if (type === 'tel') {
+                                    if (value.length < 16) {
+                                        input.classList.add('input--error')
+                                    } else {
+                                        input.classList.remove('input--error')
+                                    }
+                                }
+
+                                if (type === 'name') {
+                                    const minlength = +input.getAttribute('minlength')
+
+                                    if (!value.match(regExpName)) {
+                                        input.classList.add('input--error')
+                                    } else {
+                                        input.classList.remove('input--error')
+                                    }
+                                }
+
+                                if (type === 'surname') {
+                                    const minlength = +input.getAttribute('minlength')
+
+                                    if (!value.match(regExpName)) {
+                                        input.classList.add('input--error')
+                                    } else {
+                                        input.classList.remove('input--error')
+                                    }
+                                }
+
+                                if (type === 'patronymic') {
+                                    const minlength = +input.getAttribute('minlength')
+
+                                    if (!value.match(regExpName)) {
+                                        input.classList.add('input--error')
+                                    } else {
+                                        input.classList.remove('input--error')
+                                    }
+                                }
+
+                                if (type === 'address') {
+                                    const minlength = +input.getAttribute('minlength')
+
+                                    if (!value.match(regExpName)) {
+                                        input.classList.add('input--error')
+                                    } else {
+                                        input.classList.remove('input--error')
+                                    }
+                                }
+
+                                if (type === 'email') {
+                                    if (!validator.isEmail(value)) {
+                                        input.classList.add('input--error')
+                                    } else {
+                                        input.classList.remove('input--error')
+                                    }
+                                }
+
+                            } else {
+                                input.classList.add('input--error')
+                            }
+                        }
+                    })
+                }
+            }
+
+            if (needValidate) validate()
+
+            if (el.closest('button[type="submit"]')) {
+                event.preventDefault()
+
+                needValidate = true
+
+                let numberСorrectАields = 0
+
+                if (inputs.length) {
+                    validate()
+
+                    inputs.forEach(elInput => {
+                        if (!elInput.classList.contains('input--error')) {
+                            numberСorrectАields++
+                        } else {
+                            elInput.classList.add('input--error')
+                        }
+                    })
+
+                    if (numberСorrectАields === inputs.length) {
+                        console.log('Send data')
+
+                        if (form.hasAttribute('action')) {
+                            form.submit()
+                        }
+                    }
+                }
+            }
+        }
+    })
+}
+
+function phoneMask() {
+    const phoneMasks = document.querySelectorAll('[data-phone-mask]')
+
+    if (!phoneMasks.length) return
+
+    phoneMasks.forEach(phoneMask => {
+        IMask(phoneMask, {
+                mask: '+{7}(000)000-00-00'
+            }
+        )
+    })
+}
+
+function page() {
+    const main = document.querySelector('[data-page="main"]')
+    const header = document.querySelector('[data-header="main"]')
+
+    if (!main) return
+    if (!header) return
+    
+    const wrapperContent = main.querySelector('[data-page="wrapper-content"]')
+
+    if (wrapperContent) {
+        wrapperContent.style.paddingTop = `${header.offsetHeight}px`
+    } else {
+        main.style.paddingTop = `${header.offsetHeight}px`
+    }
+}
+
+function fixedHeader() {
+    const header = document.querySelector('[data-header="main"]')
+
+    if (!header) return
+
+    const logic = (scrolled) => {
+        if (scrolled >= 50) {
+            header.classList.add('header--fixed')
+        } else {
+            header.classList.remove('header--fixed')
+        }
+    }
+
+    logic(window.pageYOffset)
+
+    window.addEventListener('scroll', (event) => {
+        const scrolled = window.pageYOffset ? window.pageYOffset : document.body.scrollTop;
+        
+        logic(scrolled)
+    })
+}
+
 function footer() {
     const main = document.querySelector('[data-footer="main"]')
 
@@ -247,9 +421,41 @@ function search() {
     })
 }
 
+function customScrollbar() {
+    const elements = document.querySelectorAll('[data-scrollbar]')
+
+    if (!elements.length) return
+
+    elements.forEach(elem => {
+        new SimpleBar((elem), {
+            autoHide: false
+        })
+    })
+}
+
+function menu() {
+    const main = document.querySelector('[data-manu="main"]')
+
+    if (!main) return
+
+    if (window.matchMedia("(max-width: 992px)").matches) {
+        const cloned = main.cloneNode(true)
+        main.remove()
+        document.body.append(cloned)
+    }
+}
+
+validateForm()
+phoneMask()
+page()
+fixedHeader()
 footer()
 banner()
 cardSlider()
 counter()
 sCards()
 search()
+menu()
+
+
+customScrollbar()

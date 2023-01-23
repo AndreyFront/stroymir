@@ -9,6 +9,50 @@
         }
     }
 
+    .header {
+
+        &--fixed {
+            .header {
+                &__wrap-nav {
+                    padding-top: 16px;
+                }
+            }
+        }
+
+        &__wrap-nav {
+            padding-top: 16px;
+        }
+
+        &__wrap-info {
+            padding: 16px 0;
+        }
+
+        &__btn-catalog {
+            width: 40px;
+            height: 40px;
+            padding: 0;
+            border-radius: 6px;
+
+            .btn__text {
+                display: none;
+            }
+
+            .btn__icon {
+                display: block;
+                width: 32px;
+                height: 32px;
+            }
+        }
+
+        .logo {
+
+            &__image {
+                width: 137px;
+                height: 20px;
+            }
+        }
+    }
+
     .advantages {
         &__li {
             grid-column-gap: 8px;
@@ -129,6 +173,108 @@
 
         .social-network {
             margin-top: 24px;
+        }
+    }
+
+    .search {
+        height: 40px;
+        border-radius: 6px;
+    }
+
+    .menu {
+        grid-column-gap: 20px;
+
+        &__icon {
+            width: 22px;
+            height: 22px;
+        }
+    }
+
+    .page-not-found {
+        padding: 65px 0;
+    }
+
+    .contacts {
+        &__block-map {
+            height: 211px;
+            min-height: max-content;
+        }
+
+        &__block-info {
+            padding: 16px;
+        }
+
+        &__block-social-network {
+            margin-top: 24px;
+        }
+    }
+
+    .news {
+        &__wrap-cards {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .news-card {
+        &__block-image {
+            height: 177px;
+        }
+
+        &__title {
+            margin-top: 8px;
+        }
+
+        &__description {
+            line-height: 1.4em;
+        }
+    }
+
+    .privacy-policy {
+        &__block-text {
+            grid-row-gap: 16px;
+            padding: 16px;
+            border-radius: 10px;
+    
+            div {
+                p {
+                   margin: 8px 0 0 0;
+                }
+            }
+        }
+    }
+
+    .delivery-payment {
+        &__box-info {
+            padding: 16px;
+        }
+
+        &__wrap-info {
+            grid-row-gap: 16px;
+        }
+
+        &__box-info-description {
+            margin-top: 0;
+        }
+
+        &__box-info-important {
+            margin-top: 16px;
+        }
+
+        &__wrap-boxes-info {
+            grid-row-gap: 8px;
+        }
+    }
+
+    .bifurcation {
+        .form {
+            max-width: 100%;
+            width: 100%;
+        }
+    }
+
+    .form {
+        &__privacy-policy {
+            margin-top: 16px;
         }
     }
 }

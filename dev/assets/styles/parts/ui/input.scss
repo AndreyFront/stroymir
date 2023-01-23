@@ -1,0 +1,24 @@
+.input {
+    padding: 0 16px;
+    height: 48px;
+    border: 1px solid;
+    border-color: $color-1;
+    border-radius: 10px;
+    outline: none;
+    background-color: $color-4;
+    font-size: 16px;
+    transition: border-color $transition-time;
+
+    &::placeholder {
+        color: $color-9;
+        font-size: 16px;
+    }
+
+    &:focus {
+        border-color: $color-9;
+    }
+
+    &--error {
+        border-color: $color-3;
+    }
+}

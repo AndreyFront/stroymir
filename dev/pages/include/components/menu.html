@@ -1,37 +1,108 @@
-<div class="menu">
-    <a href="#" class="menu__link link-reset">
-        <div class="menu__block-icon">
-            <svg class="menu__icon">
-                <use xlink:href="./assets/icons/sprite-svg.svg#compare"/>
-            </svg>
-            <span class="menu__label-quantity">10</span>
+<div class="menu" data-manu="main">
+    <div class="menu__block-link"> <!-- active -->
+        <a href="#" class="menu__link link-reset">
+            <div class="menu__block-icon">
+                <svg class="menu__icon">
+                    <use xlink:href="./assets/icons/sprite-svg.svg#compare"/>
+                </svg>
+                <span class="menu__label-quantity">10</span>
+            </div>
+            <span class="menu__link-text">Сравнение</span>
+        </a>
+        <div class="menu__dropdown">
+            <div class="menu__dropdown-list list-reset" data-scrollbar>
+                <div class="menu__dropdown-li">
+                    <a href="#" class="menu__dropdown-product link-reset">
+                        <img src="./assets/images/picture-1.jpg" class="menu__dropdown-product-image" alt="">
+                        <span class="menu__dropdown-product-name">Эмаль ПФ-115 белая 0,9кг формула Q8 (14)1233</span>
+                    </a>
+                </div>
+            </div>
+            <div class="menu__dropdown-block-btn">
+                <a href="#" class="btn btn--size--bg btn--theme--primary" disabled>
+                    <span class="btn__text">Сравнить товары</span>
+                </a>
+            </div>
         </div>
-        <span class="menu__link-text">Сравнение</span>
-    </a>
-    <a href="#" class="menu__link link-reset">
-        <div class="menu__block-icon">
-            <svg class="menu__icon">
-                <use xlink:href="./assets/icons/sprite-svg.svg#like"/>
-            </svg>
-            <span class="menu__label-quantity">10</span>
+    </div>
+    <div class="menu__block-link">
+        <a href="#" class="menu__link link-reset">
+            <div class="menu__block-icon">
+                <svg class="menu__icon">
+                    <use xlink:href="./assets/icons/sprite-svg.svg#like"/>
+                </svg>
+                <span class="menu__label-quantity">10</span>
+            </div>
+            <span class="menu__link-text">Избранное</span>
+        </a>
+        <div class="menu__dropdown">
+            <div class="menu__dropdown-list list-reset" data-scrollbar>
+                <div class="menu__dropdown-li">
+                    <a href="#" class="menu__dropdown-product link-reset">
+                        <img src="./assets/images/picture-1.jpg" class="menu__dropdown-product-image" alt="">
+                        <span class="menu__dropdown-product-name">Эмаль ПФ-115 белая 0,9кг формула Q8 (14)1233</span>
+                    </a>
+                </div>
+                <div class="menu__dropdown-li">
+                    <a href="#" class="menu__dropdown-product link-reset">
+                        <img src="./assets/images/picture-2.jpg" class="menu__dropdown-product-image" alt="">
+                        <span class="menu__dropdown-product-name">Эмаль ПФ-115 белая 0,9кг формула Q8 (14)1233</span>
+                    </a>
+                </div>
+                <div class="menu__dropdown-li">
+                    <a href="#" class="menu__dropdown-product link-reset">
+                        <img src="./assets/images/picture-1.jpg" class="menu__dropdown-product-image" alt="">
+                        <span class="menu__dropdown-product-name">Эмаль ПФ-115 белая 0,9кг формула Q8 (14)1233</span>
+                    </a>
+                </div>
+            </div>
+            <div class="menu__dropdown-block-btn">
+                <a href="#" class="btn btn--size--bg btn--theme--primary">
+                    <span class="btn__text">Перейти к избранному</span>
+                </a>
+            </div>
         </div>
-        <span class="menu__link-text">Избранное</span>
-    </a>
-    <a href="#" class="menu__link link-reset">
-        <div class="menu__block-icon">
-            <svg class="menu__icon">
-                <use xlink:href="./assets/icons/sprite-svg.svg#bag"/>
-            </svg>
-            <span class="menu__label-quantity">10</span>
+    </div>
+    <div class="menu__block-link">
+        <a href="#" class="menu__link link-reset">
+            <div class="menu__block-icon">
+                <svg class="menu__icon">
+                    <use xlink:href="./assets/icons/sprite-svg.svg#bag"/>
+                </svg>
+                <span class="menu__label-quantity">10</span>
+            </div>
+            <span class="menu__link-text">Корзина</span>
+        </a>
+        <div class="menu__dropdown">
+            <div class="menu__dropdown-list list-reset" data-scrollbar>
+                <div class="menu__dropdown-li">
+                    <a href="#" class="menu__dropdown-product link-reset">
+                        <img src="./assets/images/picture-1.jpg" class="menu__dropdown-product-image" alt="">
+                        <span class="menu__dropdown-product-name">Эмаль ПФ-115 белая 0,9кг формула Q8 (14)1233</span>
+                    </a>
+                </div>
+                <div class="menu__dropdown-li">
+                    <a href="#" class="menu__dropdown-product link-reset">
+                        <img src="./assets/images/picture-2.jpg" class="menu__dropdown-product-image" alt="">
+                        <span class="menu__dropdown-product-name">Эмаль ПФ-115 белая 0,9кг формула Q8 (14)1233</span>
+                    </a>
+                </div>
+            </div>
+            <div class="menu__dropdown-block-btn">
+                <a href="#" class="btn btn--size--bg btn--theme--primary">
+                    <span class="btn__text">В корзину</span>
+                </a>
+            </div>
         </div>
-        <span class="menu__link-text">Корзина</span>
-    </a>
-    <a href="#" class="menu__link link-reset">
-        <div class="menu__block-icon">
-            <svg class="menu__icon">
-                <use xlink:href="./assets/icons/sprite-svg.svg#avatar"/>
-            </svg>
-        </div>
-        <span class="menu__link-text">Войти</span>
-    </a>
+    </div>
+    <div class="menu__block-link">
+        <a href="#" class="menu__link link-reset">
+            <div class="menu__block-icon">
+                <svg class="menu__icon">
+                    <use xlink:href="./assets/icons/sprite-svg.svg#avatar"/>
+                </svg>
+            </div>
+            <span class="menu__link-text">Войти</span>
+        </a>
+    </div>
 </div>

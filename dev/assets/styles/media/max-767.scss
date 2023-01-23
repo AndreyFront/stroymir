@@ -186,4 +186,18 @@
             align-items: center;
         }
     }
+
+    .contacts {
+        .social-network {
+            &__link {
+                width: 42px;
+                height: 42px;
+            }
+
+            &__icon {
+                width: 22px;
+                height: 22px;
+            }
+        }
+    }
 }
