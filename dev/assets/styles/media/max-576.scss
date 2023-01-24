@@ -195,10 +195,6 @@
     }
 
     .contacts {
-        &__block-map {
-            height: 211px;
-            min-height: max-content;
-        }
 
         &__block-info {
             padding: 16px;
@@ -206,6 +202,11 @@
 
         &__block-social-network {
             margin-top: 24px;
+        }
+
+        .map {
+            height: 211px;
+            min-height: max-content;
         }
     }
 
@@ -275,6 +276,34 @@
     .form {
         &__privacy-policy {
             margin-top: 16px;
+        }
+    }
+
+    .news-detailed {
+
+        &__image {
+            height: 177px;
+        }
+
+        &__block-info {
+            margin-top: 16px;
+
+            .title {
+                margin-bottom: 0;
+            }
+        }
+
+        &__block-text {
+            margin-top: 8px;
+            grid-row-gap: 8px;
+
+            p {
+                line-height: 1.4em;
+            }
+        }
+
+        .bifurcation {
+            padding-top: 0;
         }
     }
 }

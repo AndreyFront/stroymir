@@ -6,14 +6,6 @@
         grid-column-gap: 16px;
     }
 
-    &__block-map {
-        height: 100%;
-        background: $color-4;
-        border-radius: 10px;
-        overflow: hidden;
-        min-height: 422px;
-    }
-
     &__block-info {
         padding: 40px;
         background-color: $color-4;
@@ -64,5 +56,9 @@
         @include adaptiv-font(18, 16);
         font-weight: 600;
         color: $main-color;
+    }
+
+    .map {
+        min-height: 422px;
     }
 }

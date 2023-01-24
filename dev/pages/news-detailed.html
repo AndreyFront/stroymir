@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        @include('./include/layouts/head.html', {
+            "title": "Новости детальная"
+        })
+    </head>
+    <body>
+        <div class="wrapper-page">
+            @include('./include/layouts/header.html')
+            <main class="page" data-page="main">
+                <div class="news-detailed-page" data-page="wrapper-content">
+                    <!-- @include('./include/components/name.html') -->
+
+                    @include('./include/components/bread-crumbs.html')
+                    @include('./include/components/news-detailed.html')
+                    <section class="news section">
+                        <div class="main-container max-width">
+                            <h1 class="title title--h1 title-reset">Читайте также</h1>
+                            <div class="news__wrap-cards">
+                                @include('./include/components/news-card.html')
+                                @include('./include/components/news-card.html')
+                                @include('./include/components/news-card.html')
+                            </div>
+                        </div>
+                    </section>
+                    @include('./include/components/advantages.html')
+                    
+                </div>
+            </main>
+            @include('./include/layouts/footer.html')
+            @include('./include/layouts/scripts.html')
+        </div>
+    </body>
+</html>

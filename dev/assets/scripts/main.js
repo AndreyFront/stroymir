@@ -450,26 +450,17 @@ function map() {
 
     if (!main) return
 
-    ymaps.ready(init())
+    ymaps.ready(init)
 
     function init() {
-        const map = main.querySelector('#map')
+        const map = main.querySelector('[data-map="map"]')
 
         if (!map) return
 
-        const htmlMapContent = (name, place, image, url) => {
+        const htmlMapContent = (data) => {
             return `
                 <div class="map-content">
-                    <div class="map-content__block-info">
-                        <span class="map-content__name">${name}</span>
-                        <span class="map-content__place">${place}</span>
-                    </div>
-                    <div class="map-content__block-image">
-                        <img src="${image}" class="map-content__image"/>
-                    </div>
-                    <div class="map-content__block-link">
-                        <a href="${url}" class="map-content__link">Смотреть проект</a>
-                    </div>
+                    <span class="map-info">${data}</span>    
                 </div>
             `
         }
@@ -483,7 +474,7 @@ function map() {
         myMap.controls.add('fullscreenControl', { float: 'left' })
 
         let pm = new ymaps.Placemark([55.77101400, 37.63209300], {
-            balloonContent: htmlMapContent('Гостевой дома “Регата”', 'г. Ростов-на-Дону', './assets/images/image-8.jpg', '#'),
+            balloonContent: htmlMapContent('Инфа про место'),
             preset: 'islands#blackStretchyIcon',
             draggable: true,
         }, {
