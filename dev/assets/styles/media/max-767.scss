@@ -200,4 +200,14 @@
             }
         }
     }
+
+    .about-us {
+        &__banner {
+            padding: 24px;
+        }
+
+        &__banner-subtitle {
+            margin-top: 16px;
+        }
+    }
 }

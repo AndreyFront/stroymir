@@ -54,6 +54,10 @@
     }
 
     .advantages {
+        &__list {
+            grid-template-columns: 1fr;
+        }
+
         &__li {
             grid-column-gap: 8px;
         }
@@ -304,6 +308,12 @@
 
         .bifurcation {
             padding-top: 0;
+        }
+    }
+
+    .about-us {
+        &__banner-subtitle {
+            line-height: 1.4em;
         }
     }
 }

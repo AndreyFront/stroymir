@@ -147,4 +147,21 @@
             min-height: max-content;
         }
     }
+
+    .about-us {
+        &__banner {
+            min-height: 517px;
+
+            &--direction--left .about-us__banner-block-info,
+            &--direction--right .about-us__banner-block-info {
+                padding: 0;
+                min-height: 517px;
+            }
+
+            &--direction--left .about-us__banner-bg *,
+            &--direction--right .about-us__banner-bg * {
+                object-position: center;
+            } 
+        }
+    }
 }

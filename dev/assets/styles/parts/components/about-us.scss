@@ -1,0 +1,82 @@
+.about-us {
+
+    &__wrap-banners {
+        display: grid;
+        grid-row-gap: 24px;
+        padding-top: 8px;
+    }
+
+    &__banner {
+        position: relative;
+        padding: 64px 56px;
+        background-color: $color-4;
+        border-radius: 10px;
+        overflow: hidden;
+        min-height: 360px;
+
+        &--direction--left {
+            .about-us {
+                &__banner-block-info {
+                    margin-right: auto;
+                    padding-right: 398px;
+                }
+
+                &__banner-subtitle {
+                    max-width: 655px;
+                }
+
+                &__banner-bg {
+                    * {
+                        object-position: right;
+                    }
+                }
+            }
+        }
+
+        &--direction--right {
+
+            .about-us {
+                &__banner-block-info {
+                    margin-left: auto;
+                    padding-left: 398px;
+                }
+
+                &__banner-bg {
+                    * {
+                        object-position: left;
+                    }
+                }
+            }
+        }
+    }
+
+    &__banner-block-info {
+        position: relative;
+        z-index: 1;
+
+        .title {
+            margin-bottom: 0;
+        }
+    }
+
+    &__banner-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+        * {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__banner-subtitle {
+        display: block;
+        margin-top: 24px;
+        @include adaptiv-font(18, 16);
+        line-height: 1.7em;
+    }
+}
