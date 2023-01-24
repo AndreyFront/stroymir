@@ -445,6 +445,63 @@ function menu() {
     }
 }
 
+function map() {
+    const main = document.querySelector('[data-map="main"]')
+
+    if (!main) return
+
+    ymaps.ready(init())
+
+    function init() {
+        const map = main.querySelector('#map')
+
+        if (!map) return
+
+        const htmlMapContent = (name, place, image, url) => {
+            return `
+                <div class="map-content">
+                    <div class="map-content__block-info">
+                        <span class="map-content__name">${name}</span>
+                        <span class="map-content__place">${place}</span>
+                    </div>
+                    <div class="map-content__block-image">
+                        <img src="${image}" class="map-content__image"/>
+                    </div>
+                    <div class="map-content__block-link">
+                        <a href="${url}" class="map-content__link">Смотреть проект</a>
+                    </div>
+                </div>
+            `
+        }
+
+        const myMap = new ymaps.Map(map, {
+            center: [55.77101400, 37.63209300],
+            zoom: 13,
+            controls: ["zoomControl"]
+        });
+
+        myMap.controls.add('fullscreenControl', { float: 'left' })
+
+        let pm = new ymaps.Placemark([55.77101400, 37.63209300], {
+            balloonContent: htmlMapContent('Гостевой дома “Регата”', 'г. Ростов-на-Дону', './assets/images/image-8.jpg', '#'),
+            preset: 'islands#blackStretchyIcon',
+            draggable: true,
+        }, {
+            iconLayout: 'default#image',
+            iconImageHref: './assets/images/point.svg',
+            iconImageSize: [48, 48],
+            iconImageOffset: [-24, -24],
+            hideIconOnBalloonOpen: false,
+        })
+
+        myMap.geoObjects.add(pm)
+
+        pm.events.add('click', (event) => {
+            myMap.setCenter(event.get('target').geometry.getCoordinates())
+        })
+    } 
+}
+
 validateForm()
 phoneMask()
 page()
@@ -456,6 +513,7 @@ counter()
 sCards()
 search()
 menu()
+map()
 
 
 customScrollbar()
