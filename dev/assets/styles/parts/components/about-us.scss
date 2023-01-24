@@ -8,7 +8,6 @@
 
     &__banner {
         position: relative;
-        padding: 64px 56px;
         background-color: $color-4;
         border-radius: 10px;
         overflow: hidden;
@@ -16,9 +15,9 @@
 
         &--direction--left {
             .about-us {
-                &__banner-block-info {
-                    margin-right: auto;
-                    padding-right: 398px;
+
+                &__banner-wrap-info {
+                    grid-template-columns: auto max-content;
                 }
 
                 &__banner-subtitle {
@@ -36,9 +35,9 @@
         &--direction--right {
 
             .about-us {
-                &__banner-block-info {
-                    margin-left: auto;
-                    padding-left: 398px;
+
+                &__banner-wrap-info {
+                    grid-template-columns: max-content auto;
                 }
 
                 &__banner-bg {
@@ -51,8 +50,7 @@
     }
 
     &__banner-block-info {
-        position: relative;
-        z-index: 1;
+        padding: 64px 56px;
 
         .title {
             margin-bottom: 0;
@@ -78,5 +76,23 @@
         margin-top: 24px;
         @include adaptiv-font(18, 16);
         line-height: 1.7em;
+    }
+
+    &__banner-wrap-info {
+        position: relative;
+        z-index: 1;
+        display: grid;
+    }
+
+    &__banner-image {
+        width: 556px;
+        height: 363px;
+
+        * {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-position: center;
+        }
     }
 }
