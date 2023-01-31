@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    @include('./include/layouts/head.html', {
+    "title": "Карточка товара"
+    })
+</head>
+
+<body>
+    <div class="wrapper-page">
+        @include('./include/layouts/header.html')
+        <main class="page" data-page="main">
+            <div class="product-card-page" data-page="wrapper-content">
+                <!-- @include('./include/components/name.html') -->
+
+                @include('./include/components/bread-crumbs.html')
+                @include('./include/components/product-card.html')
+                <section class="cards-slider section" data-cards-slider="main">
+                    <div class="main-container max-width">
+                        <div class="block-title">
+                            <h2 class="title title--h2 title-reset">С этим товаром покупают</h2>
+                            <div class="box-arrows">
+                                <button type="button" class="arrow" data-cards-slider="btn-prev">
+                                    <svg class="arrow__icon">
+                                        <use xlink:href="./assets/icons/sprite-svg.svg#arrow-left" />
+                                    </svg>
+                                </button>
+                                <button type="button" class="arrow" data-cards-slider="btn-next">
+                                    <svg class="arrow__icon">
+                                        <use xlink:href="./assets/icons/sprite-svg.svg#arrow-right" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="swiper cards-slider__slider" data-cards-slider="slider">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="product-preview">
+                                        <div class="product-preview__wrap-labels">
+                                            <div class="label label--hit">
+                                                <span class="label__sign">Хит!</span>
+                                            </div>
+                                        </div>
+                                        <div class="product-preview__wrap-actions">
+                                            <a href="#"
+                                                class="product-preview__action product-preview__action--compare"></a>
+                                            <a href="#"
+                                                class="product-preview__action product-preview__action--like"></a>
+                                        </div>
+                                        <a href="#" class="product-preview__block-image">
+                                            <img src="./assets/images/picture-1.jpg" class="product-preview__image"
+                                                alt="">
+                                        </a>
+                                        <a href="#" class="product-preview__title link-reset">
+                                            ЭМАЛЬ ПФ-115 БЕЛАЯ 0,9КГ ФОРМУЛА Q8 (14)1233
+                                        </a>
+                                        <div class="product-preview__wrap-price">
+                                            <div class="product-preview__block-price">
+                                                <span class="product-preview__price">136 000₽</span>
+                                                <span class="product-preview__old-price">200 000₽</span>
+                                            </div>
+                                            <div class="product-preview__block-control">
+                                                @include('./include/ui/counter.html')
+                                                <a href="#" class="product-preview__btn-cart">
+                                                    <svg class="product-preview__btn-cart-icon">
+                                                        <use xlink:href="./assets/icons/sprite-svg.svg#cart" />
+                                                    </svg>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="product-preview">
+                                        <div class="product-preview__wrap-labels">
+                                            <div class="label label--discount">
+                                                <span class="label__sign">Скидка</span>
+                                            </div>
+                                        </div>
+                                        <div class="product-preview__wrap-actions">
+                                            <a href="#"
+                                                class="product-preview__action product-preview__action--compare active"></a>
+                                            <a href="#"
+                                                class="product-preview__action product-preview__action--like active"></a>
+                                        </div>
+                                        <a href="#" class="product-preview__block-image">
+                                            <img src="./assets/images/picture-1.jpg" class="product-preview__image"
+                                                alt="">
+                                        </a>
+                                        <a href="#" class="product-preview__title link-reset">
+                                            КАТАЛОГ СТРОЙМИР
+                                        </a>
+                                        <div class="product-preview__wrap-price">
+                                            <div class="product-preview__block-price">
+                                                <span class="product-preview__price">136 000₽</span>
+                                            </div>
+                                            <div class="product-preview__block-control">
+                                                @include('./include/ui/counter.html')
+                                                <a href="#" class="product-preview__btn-cart">
+                                                    <svg class="product-preview__btn-cart-icon">
+                                                        <use xlink:href="./assets/icons/sprite-svg.svg#cart" />
+                                                    </svg>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="product-preview">
+                                        <div class="product-preview__wrap-labels">
+                                            <div class="label label--hit">
+                                                <span class="label__sign">Хит!</span>
+                                            </div>
+                                            <div class="label label--discount">
+                                                <span class="label__sign">Скидка</span>
+                                            </div>
+                                        </div>
+                                        <div class="product-preview__wrap-actions">
+                                            <a href="#"
+                                                class="product-preview__action product-preview__action--compare"></a>
+                                            <a href="#"
+                                                class="product-preview__action product-preview__action--like"></a>
+                                        </div>
+                                        <a href="#" class="product-preview__block-image">
+                                            <img src="./assets/images/picture-1.jpg" class="product-preview__image"
+                                                alt="">
+                                        </a>
+                                        <a href="#" class="product-preview__title link-reset">
+                                            КАТАЛОГ СТРОЙМИР
+                                        </a>
+                                        <div class="product-preview__wrap-price">
+                                            <div class="product-preview__block-price">
+                                                <span class="product-preview__price">136 000₽</span>
+                                            </div>
+                                            <div class="product-preview__block-control">
+                                                @include('./include/ui/counter.html')
+                                                <a href="#" class="product-preview__btn-cart">
+                                                    <svg class="product-preview__btn-cart-icon">
+                                                        <use xlink:href="./assets/icons/sprite-svg.svg#cart" />
+                                                    </svg>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    @include('./include/components/product-preview.html')
+                                </div>
+                                <div class="swiper-slide">
+                                    @include('./include/components/product-preview.html')
+                                </div>
+                                <div class="swiper-slide">
+                                    @include('./include/components/product-preview.html')
+                                </div>
+                                <div class="swiper-slide">
+                                    @include('./include/components/product-preview.html')
+                                </div>
+                                <div class="swiper-slide">
+                                    @include('./include/components/product-preview.html')
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                @include('./include/components/advantages.html')
+
+            </div>
+        </main>
+        @include('./include/layouts/footer.html')
+        @include('./include/layouts/scripts.html')
+    </div>
+</body>
+
+</html>
