@@ -1,4 +1,4 @@
-<section class="product-card">
+<section class="product-card" data-product-card="main">
     <div class="main-container max-width">
         <div class="block-title">
             <h1 class="title title--h1 title-reset">
@@ -6,13 +6,133 @@
                 с металлической ручкой (900 палетта)
             </h1>
         </div>
-        <div class="product-card__wrap-actions">
-            <a href="#" class="action">
-                <span class="action__text">В сравнение</span>
-            </a>
-            <a href="#" class="action">
-                <span class="action__text">В избранное</span>
-            </a>
+        <div class="product-card__wrap-actions" data-product-card="wrap-actions">
+            <div class="product-card__actions-block">
+                <a href="#" class="action action--compare"> <!-- active -->
+                    <span class="action__text">В сравнение</span>
+                </a>
+                <a href="#" class="action action--favourites"> <!-- active -->
+                    <span class="action__text">В избранное</span>
+                </a>
+            </div>
+            <div class="product-card__actions-block-info">
+                <span class="product-card__article-number">Артикул: М1726</span>
+                <span class="product-card__availability product-card__availability--in-stock">В наличии</span>
+                <!-- product-card__availability--in-stock (есть в наличии), product-card__availability--out-of-stock (нет в ниличии) -->
+            </div>
+        </div>
+        <div class="product-card__wrap-content">
+            <div class="product-card__wrap-slider">
+                <div class="product-card__inner-sliders">
+                    <div class="product-card__wrapper-slider-thumbs">
+                        <div thumbsSlider class="swiper product-card__slider-thumbs" data-product-card="slider-thumbs">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="https://swiperjs.com/demos/images/nature-7.jpg" />
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="https://swiperjs.com/demos/images/nature-8.jpg" />
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="https://swiperjs.com/demos/images/nature-10.jpg" />
+                                </div>
+                            </div>
+                        </div>
+                        <button class="product-card__btn-slider" data-product-card="btn-prev">
+                            <svg class="product-card__btn-slider-icon">
+                                <use xlink:href="./assets/icons/sprite-svg.svg#caret-up" />
+                            </svg>
+                        </button>
+                        <button class="product-card__btn-slider" data-product-card="btn-next">
+                            <svg class="product-card__btn-slider-icon">
+                                <use xlink:href="./assets/icons/sprite-svg.svg#caret-down" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="swiper product-card__slider-main" data-product-card="slider-main">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="https://swiperjs.com/demos/images/nature-7.jpg" />
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="https://swiperjs.com/demos/images/nature-8.jpg" />
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="https://swiperjs.com/demos/images/nature-10.jpg" />
+                            </div>
+                        </div>
+                        <div class="product-card__wrap-labels" data-product-card="wrap-labels">
+                            <div class="label label--hit">
+                                <span class="label__sign">Хит!</span>
+                            </div>
+                            <div class="label label--discount">
+                                <span class="label__sign">Скидка</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination swiper-pagination--custom" data-product-card="pagination"></div>
+                </div>
+                <div class="product-card__block-description" data-product-card="description">
+                    <span class="product-card__title-description">Описание</span>
+                    <div class="product-card__block-text-description">
+                        <p>
+                            Очиститель монтажной пены clean-pro способен растворять и очищать поверхности, рабочую
+                            одежду от незатвердевшего напыляемого утеплителя, монтажной пены, герметика и клея.
+                            Кроме того, монтажный пистолет после каждой эксплуатации требует к себе ухода – его
+                            нужно очистить от пены, что ведет к увеличению срока его эксплуатации.
+                            Можно использовать в качестве антисептика - свойства помогают удалить с поверхности
+                            бактерии. Может повредить некоторые пластмассы, лакированные и окрашенные поверхности и
+                            ткани, поэтому до начала работ необходимо защитить поверхности.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card__wrap-info">
+                @include('./bar-price.html')
+                @include('./list-data.html')
+            </div>
         </div>
     </div>
 </section>

@@ -1,6 +1,7 @@
 body {
     .swiper {
-        .swiper-horizontal > .swiper-pagination-bullets, 
+
+        .swiper-horizontal>.swiper-pagination-bullets,
         .swiper-pagination-bullets.swiper-pagination-horizontal {
             display: grid;
             grid-auto-columns: max-content;
@@ -10,7 +11,7 @@ body {
             bottom: 24px;
         }
 
-        .swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
+        .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet,
         .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
             margin: 0;
         }
@@ -24,6 +25,30 @@ body {
 
             &.swiper-pagination-bullet-active {
                 background-color: $color-2;
+            }
+        }
+    }
+
+    .swiper-pagination {
+        &--custom {
+            top: calc(100% + 8px);
+            bottom: auto;
+            display: grid;
+            grid-auto-columns: max-content;
+            grid-auto-flow: column;
+            justify-content: center;
+            grid-column-gap: 9px;
+            bottom: 24px;
+
+            .swiper-pagination-bullet {
+                margin: 0 !important;
+                background-color: $color-8;
+                opacity: 1;
+                transition: background-color $transition-time;
+
+                &.swiper-pagination-bullet-active {
+                    background-color: $color-2;
+                }
             }
         }
     }

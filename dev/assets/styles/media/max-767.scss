@@ -28,10 +28,10 @@
                 .footer__title {
                     color: $color-2;
                 }
-    
+
                 .footer__arrow {
                     transform: rotate(-180deg);
-    
+
                     use {
                         stroke: $color-2;
                     }
@@ -208,6 +208,62 @@
 
         &__banner-subtitle {
             margin-top: 16px;
+        }
+    }
+
+    .product-card {
+        &__actions-block-info {
+            order: 1;
+            grid-column-gap: 16px;
+        }
+
+        &__actions-block {
+            order: 2;
+            grid-column-gap: 8px;
+        }
+
+        &__wrap-labels {
+            position: relative;
+            grid-auto-columns: max-content;
+            grid-auto-flow: column;
+            pointer-events: auto;
+            grid-column-gap: 8px;
+            margin-top: 16px;
+        }
+    }
+
+    .action {
+        display: grid;
+        width: 24px;
+        height: 24px;
+        padding: 0;
+
+        &__text {
+            display: none;
+        }
+    }
+
+    .list-data {
+        &__table {
+            position: relative;
+
+            &::after {
+                content: '';
+                position: absolute;
+                z-index: 1;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 40px;
+                background: linear-gradient(0deg, #FFFFFF 15.63%, rgba(255, 255, 255, 0) 100%);
+                transition: opacity $transition-time, transform $transition-time;
+            }
+
+            &:not(.not-active)::after {
+                pointer-events: none;
+                opacity: 0;
+                transform: translateY(10px);
+            }
         }
     }
 }

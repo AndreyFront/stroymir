@@ -9,6 +9,10 @@
         }
     }
 
+    .btn {
+        height: 42px;
+    }
+
     .header {
 
         &--fixed {
@@ -168,7 +172,8 @@
 
         &__sign {
             display: block;
-            max-width: 140px;line-height: 1.3em;
+            max-width: 140px;
+            line-height: 1.3em;
         }
 
         &.section .title {
@@ -239,10 +244,10 @@
             grid-row-gap: 16px;
             padding: 16px;
             border-radius: 10px;
-    
+
             div {
                 p {
-                   margin: 8px 0 0 0;
+                    margin: 8px 0 0 0;
                 }
             }
         }
@@ -318,6 +323,30 @@
 
         &__banner-image {
             height: 261px;
+        }
+    }
+
+    .bar-price {
+        padding: 17px 20px;
+    }
+
+    .product-card {
+        &__slider-main img {
+            width: 220px;
+            height: 203px;
+        }
+
+        &__inner-sliders {
+            height: 220px;
+        }
+    }
+
+    .favourites {
+        padding-bottom: 0;
+
+        &__wrap-cards {
+            grid-column-gap: 8px;
+            grid-row-gap: 8px;
         }
     }
 }

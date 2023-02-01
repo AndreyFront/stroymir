@@ -1,0 +1,15 @@
+.favourites {
+    padding-bottom: 36px;
+
+    &__wrap-cards {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-column-gap: 40px;
+        grid-row-gap: 24px;
+        margin-top: 24px;
+    }
+
+    &__btn-more {
+        display: none;
+    }
+}

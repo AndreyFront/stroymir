@@ -44,9 +44,9 @@ function smoothView(btn, el, startHeight = 0) {
     let observer = new MutationObserver(mutationRecords => {
         update()
     })
-        
+
     observer.observe(el, {
-        childList: true, 
+        childList: true,
         subtree: true,
         characterDataOldValue: true
     })
@@ -182,8 +182,8 @@ function phoneMask() {
 
     phoneMasks.forEach(phoneMask => {
         IMask(phoneMask, {
-                mask: '+{7}(000)000-00-00'
-            }
+            mask: '+{7}(000)000-00-00'
+        }
         )
     })
 }
@@ -194,7 +194,7 @@ function page() {
 
     if (!main) return
     if (!header) return
-    
+
     const wrapperContent = main.querySelector('[data-page="wrapper-content"]')
 
     if (wrapperContent) {
@@ -221,7 +221,7 @@ function fixedHeader() {
 
     window.addEventListener('scroll', (event) => {
         const scrolled = window.pageYOffset ? window.pageYOffset : document.body.scrollTop;
-        
+
         logic(scrolled)
     })
 }
@@ -265,7 +265,7 @@ function footer() {
             if (blockContacts) {
                 const blockHead = blockContacts.querySelector('[data-footer="block-head"]')
                 const blockBody = blockContacts.querySelector('[data-footer="block-body"]')
-    
+
                 smoothView(blockHead, blockBody)
             }
         })
@@ -283,8 +283,8 @@ function banner() {
 
         const swiper = new Swiper(slider, {
             pagination: {
-              el: pagination,
-              clickable: true
+                el: pagination,
+                clickable: true
             },
         })
     })
@@ -337,39 +337,39 @@ function counter() {
         const remove = elem.querySelector('[data-counter="remove"]')
         const add = elem.querySelector('[data-counter="add"]')
         const input = elem.querySelector('[data-counter="input"]')
-    
+
         const max = +input.getAttribute('max')
         const min = +input.getAttribute('min')
-    
+
         const validInput = (value) => {
             const inputValue = +value
             switch (true) {
                 case inputValue <= min:
                     input.value = min
                     remove.setAttribute('disabled', '')
-                break
+                    break
                 case inputValue >= max:
                     input.value = max
                     add.setAttribute('disabled', '')
-                break
+                    break
                 default:
                     remove.removeAttribute('disabled')
                     add.removeAttribute('disabled')
             }
         }
-    
+
         validInput(input.value)
-    
+
         input.addEventListener('change', () => {
             console.log(input.value)
             validInput(input.value)
         })
-    
+
         add.addEventListener('click', () => {
             input.value++
             validInput(input.value)
         })
-    
+
         remove.addEventListener('click', () => {
             input.value--
             validInput(input.value)
@@ -382,10 +382,10 @@ function sCards() {
         const mains = document.querySelectorAll('[data-s-cards="main"]')
 
         if (!mains.length) return
-    
+
         mains.forEach(main => {
             const slider = main.querySelector('[data-s-cards="slider"]')
-    
+
             const swiper = new Swiper(slider, {
                 slidesPerView: 2.15,
                 spaceBetween: 8,
@@ -490,7 +490,100 @@ function map() {
         pm.events.add('click', (event) => {
             myMap.setCenter(event.get('target').geometry.getCoordinates())
         })
-    } 
+    }
+}
+
+function productCard() {
+    const main = document.querySelector('[data-product-card="main"]')
+
+    if (!main) return
+
+    const mainSlider = main.querySelector('[data-product-card="slider-main"]')
+    const thumbsSlider = main.querySelector('[data-product-card="slider-thumbs"]')
+    const btnPrev = main.querySelector('[data-product-card="btn-prev"]')
+    const btnNext = main.querySelector('[data-product-card="btn-next"]')
+    const pagination = main.querySelector('[data-product-card="pagination"]')
+    const description = main.querySelector('[data-product-card="description"]')
+    const listData = main.querySelector('[data-list-data="main"]')
+    const wrapActions = main.querySelector('[data-product-card="wrap-actions"]')
+    const wrapLabels = main.querySelector('[data-product-card="wrap-labels"]')
+
+    const swiperMain = new Swiper(thumbsSlider, {
+        spaceBetween: 8,
+        slidesPerView: 3,
+        freeMode: true,
+        watchSlidesProgress: true,
+        direction: "vertical",
+        navigation: {
+            nextEl: btnNext,
+            prevEl: btnPrev,
+        },
+    })
+
+    const swiperThumbs = new Swiper(mainSlider, {
+        spaceBetween: 10,
+        thumbs: {
+            swiper: swiperMain,
+        },
+        pagination: {
+            el: pagination,
+        },
+    })
+
+    if (window.matchMedia("(max-width: 992px)").matches) {
+        if (listData) {
+            const clonedNode = listData.cloneNode(true)
+            if (description) {
+                description.before(clonedNode)
+                listData.remove()
+            }
+        }
+    }
+
+    if (window.matchMedia("(max-width: 767px)").matches) {
+        if (wrapLabels) {
+            const clonedNode = wrapLabels.cloneNode(true)
+            if (wrapActions) {
+                wrapActions.after(clonedNode)
+                wrapLabels.remove()
+            }
+        }
+    }
+}
+
+function listData() {
+    const mains = document.querySelectorAll('[data-list-data="main"]')
+
+    if (!mains.length) return
+
+    mains.forEach(main => {
+        const table = main.querySelector('[data-list-data="table"]')
+        const btnMore = main.querySelector('[data-list-data="btn-more-data"]')
+
+        btnMore.textContent = 'Узнать больше'
+
+        btnMore.addEventListener('click', () => {
+            if (btnMore.classList.contains('not-active')) {
+                btnMore.textContent = 'Свернуть'
+            } else {
+                btnMore.textContent = 'Узнать больше'
+            }
+        })
+
+        smoothView(btnMore, table, 144)
+    })
+}
+
+function barPrice() {
+    const main = document.querySelector('[data-bar-price="main"]')
+
+    if (!main) return
+
+    const menu = document.querySelector('[data-manu="main"]')
+
+    if (menu) {
+        main.style.bottom = `${menu.offsetHeight - 2}px`
+    }
 }
 
 validateForm()
@@ -505,6 +598,8 @@ sCards()
 search()
 menu()
 map()
-
+productCard()
+listData()
+barPrice()
 
 customScrollbar()

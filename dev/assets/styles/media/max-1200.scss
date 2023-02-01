@@ -16,7 +16,7 @@
         .main-container {
             overflow-x: auto;
         }
-    } 
+    }
 
     .category-card {
 
@@ -27,6 +27,7 @@
     }
 
     .header {
+
         &__nav-list,
         .menu {
             grid-column-gap: 30px;
@@ -55,6 +56,23 @@
     .about-us {
         &__banner-image {
             width: 400px;
+        }
+    }
+
+    .product-card {
+        &__wrap-content {
+            grid-template-columns: minmax(200px, 1fr);
+            justify-content: center;
+        }
+
+        &__wrap-info {
+            margin-top: 24px;
+        }
+    }
+
+    .favourites {
+        &__wrap-cards {
+            grid-template-columns: repeat(3, 1fr);
         }
     }
 }

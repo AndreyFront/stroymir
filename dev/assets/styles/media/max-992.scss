@@ -83,7 +83,7 @@
         &__slider {
             min-height: 376px;
         }
-    
+
         &__block-banner {
             min-height: 376px;
             padding: 16px;
@@ -99,7 +99,7 @@
     .bread-crumbs {
         display: none;
     }
-    
+
     .menu {
         position: fixed;
         z-index: 11;
@@ -171,10 +171,80 @@
         &__banner-block-info {
             order: 1;
         }
-        
+
         &__banner-image {
             order: 2;
             width: 100%;
+        }
+    }
+
+    .product-card {
+        padding-bottom: 13px;
+
+        &__wrapper-slider-thumbs {
+            display: none;
+        }
+
+        &__inner-sliders {
+            position: relative;
+        }
+
+        &__block-description {
+            margin-top: 24px;
+        }
+
+        &__wrap-info {
+            margin: 0;
+        }
+
+        .swiper-pagination {
+            display: grid;
+        }
+
+        .list-data {
+            margin-top: 40px;
+        }
+    }
+
+    .bar-price {
+        position: fixed;
+        z-index: 11;
+        bottom: 87px;
+        left: 0;
+        width: 100%;
+        background-color: $color-1;
+        border-radius: 0;
+        box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.08);
+
+        &__block-price {
+            grid-template-columns: max-content;
+        }
+
+        &__quantity {
+            display: none;
+        }
+
+        .btn {
+            &__text {
+                display: none;
+            }
+        }
+    }
+
+    .list-data {
+        &__link {
+            margin-top: 24px;
+        }
+    }
+
+    .favourites {
+        &__wrap-cards {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        &__btn-more {
+            display: grid;
+            margin: 24px auto 0 auto;
         }
     }
 }

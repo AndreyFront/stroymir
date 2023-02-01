@@ -1,6 +1,60 @@
 .action {
+    position: relative;
+    padding-right: 30px;
+    text-decoration: none;
 
-    &.active {}
+    &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: 0;
+        width: 24px;
+        height: 24px;
+        transform: translateY(-50%);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        transition: background-image $transition-time;
+    }
 
-    &__text {}
+    &:hover &__text {
+        color: $color-2;
+    }
+
+    &--compare {
+        &::after {
+            background-image: url('../images/compare.svg');
+        }
+
+        &.active {
+            &::after {
+                background-image: url('../images/compare-active.svg');
+            }
+        }
+    }
+
+    &--favourites {
+        &::after {
+            background-image: url('../images/like.svg');
+        }
+
+        &.active {
+            &::after {
+                background-image: url('../images/like-active.svg');
+            }
+        }
+    }
+
+    &.active {
+        .action__text {
+            color: $color-2;
+        }
+    }
+
+    &__text {
+        color: $main-color;
+        @include adaptiv-font(18, 16);
+        line-height: 1.3em;
+        transition: color $transition-time;
+    }
 }
