@@ -31,6 +31,7 @@
     "sass": "^1.51.0"
   },
   "dependencies": {
+    "fslightbox": "^3.4.0-2",
     "imask": "^6.4.3",
     "normalize.css": "^8.0.1",
     "nouislider": "^15.6.1",
