@@ -510,7 +510,6 @@ function productCard() {
     const swiperMain = new Swiper(thumbsSlider, {
         spaceBetween: 8,
         slidesPerView: 3,
-        freeMode: true,
         watchSlidesProgress: true,
         direction: "vertical",
         navigation: {
