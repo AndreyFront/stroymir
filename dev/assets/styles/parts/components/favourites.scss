@@ -9,7 +9,14 @@
         margin-top: 24px;
     }
 
-    &__btn-more {
-        display: none;
+    &__block-nav {
+        display: grid;
+        grid-template-columns: repeat(2, max-content);
+        align-items: center;
+        justify-content: space-between;
+        grid-column-gap: 20px;
+        margin-top: 40px;
     }
+
+    &__btn-more.btn {}
 }

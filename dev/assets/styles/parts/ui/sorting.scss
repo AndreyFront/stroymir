@@ -1,0 +1,53 @@
+.sorting {
+    position: relative;
+    width: max-content;
+
+    &.active {
+        .sorting__block-body {
+            transform: translateY(0);
+            opacity: 1;
+            pointer-events: auto;
+        }
+    }
+
+    &__block-head {
+        display: grid;
+        grid-template-columns: auto max-content;
+        align-items: center;
+        cursor: pointer;
+        transition: opacity $transition-time;
+
+        &:hover {
+            opacity: 0.6;
+        }
+    }
+
+    &__title-head {
+        @include adaptiv-font(16, 14);
+        font-weight: 600;
+        color: $color-2;
+    }
+
+    &__icon {
+        width: 24px;
+        height: 24px;
+    }
+
+    &__block-body {
+        position: absolute;
+        z-index: 10;
+        display: grid;
+        grid-row-gap: 16px;
+        top: calc(100% + 10px);
+        left: 0;
+        width: 237px;
+        padding: 16px;
+        background-color: $color-1;
+        box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.15);
+        border-radius: 6px;
+        transform: translateY(10px);
+        opacity: 0;
+        pointer-events: none;
+        transition: transform $transition-time, opacity $transition-time;
+    }
+}

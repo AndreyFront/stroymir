@@ -361,7 +361,6 @@ function counter() {
         validInput(input.value)
 
         input.addEventListener('change', () => {
-            console.log(input.value)
             validInput(input.value)
         })
 
@@ -586,6 +585,199 @@ function barPrice() {
     }
 }
 
+function catalog() {
+    const main = document.querySelector('[data-catalog="main"]')
+
+    if (!main) return
+
+    const wrapFilter = main.querySelector('[data-catalog="wrap-filter"]')
+
+    document.addEventListener('click', (event) => {
+        const el = event.target
+        if (el.closest('[data-catalog="li-head-categories"]')) {
+            const liHeadCategories = el.closest('[data-catalog="li-head-categories"]')
+
+            if (liHeadCategories.nextElementSibling) {
+                liHeadCategories.classList.toggle('active')
+                liHeadCategories.nextElementSibling.classList.toggle('active')
+            }
+        }
+
+        if (el.closest('[data-catalog="block-filter"]')) {
+            const blockFilter = el.closest('[data-catalog="block-filter"]')
+
+            if (el.closest('[data-catalog="block-head-filter"]')) {
+                const blockHeadFilter = el.closest('[data-catalog="block-head-filter"]')
+                const blockBodyFilter = blockFilter.querySelector('[data-catalog="block-body-filter"]')
+
+                blockHeadFilter.classList.toggle('active')
+                if (blockBodyFilter) blockBodyFilter.classList.toggle('active')
+            }
+        }
+
+        if (el.closest('[data-catalog="open-mob-filter"]')) {
+            if (wrapFilter) wrapFilter.classList.add('active')
+        } else if (el.closest('[data-catalog="wrap-filter"]')) {
+            const wrapFilter = el.closest('[data-catalog="wrap-filter"]')
+
+            if (el.closest('[data-catalog="close-mob-filter"]')) {
+                wrapFilter.classList.remove('active')
+            }
+        } else {
+            if (wrapFilter.classList.contains('active')) {
+                wrapFilter.classList.remove('active')
+            }
+        }
+    })
+}
+
+function filterRange() {
+    const blockStepsSlider = document.querySelectorAll('[data-filter-range="block-filter-range"]')
+    if (!blockStepsSlider.length) return
+
+    blockStepsSlider.forEach(itemSlider => {
+        const stepsSlider = itemSlider.querySelector('[data-filter-range="filter-range"]')
+        const inputFrom = itemSlider.querySelector('[data-filter-range="input-from"]')
+        const inputBefore = itemSlider.querySelector('[data-filter-range="input-before"]')
+        const inputs = [inputFrom, inputBefore]
+
+        const start = +itemSlider.getAttribute('data-filter-range-start')
+        const finish = +itemSlider.getAttribute('data-filter-range-finish')
+        const min = +itemSlider.getAttribute('data-filter-range-min')
+        const max = +itemSlider.getAttribute('data-filter-range-max')
+
+        let value;
+
+        noUiSlider.create(stepsSlider, {
+            start: [start, finish],
+            connect: true,
+            animate: true,
+            animationDuration: 1600,
+            tooltips: [false, false],
+            range: {
+                'min': [min],
+                'max': [max]
+            }
+        })
+
+        stepsSlider.noUiSlider.on('update', (values, handle) => {
+            value = Math.round(values[handle])
+
+            inputs[handle].value = value
+        })
+
+        inputs.forEach(function (input, handle) {
+
+            input.addEventListener('change', function () {
+                stepsSlider.noUiSlider.setHandle(handle, this.value)
+            })
+
+            input.addEventListener('keydown', function (e) {
+
+                const values = stepsSlider.noUiSlider.get()
+                const value = Number(values[handle])
+
+                const steps = stepsSlider.noUiSlider.steps()
+
+                const step = steps[handle]
+
+                let position
+
+                // 13 is enter,
+                // 38 is key up,
+                // 40 is key down.
+                switch (e.which) {
+
+                    case 13:
+                        stepsSlider.noUiSlider.setHandle(handle, this.value)
+                        break
+
+                    case 38:
+
+                        position = step[1]
+
+                        if (position === false) {
+                            position = 1
+                        }
+
+                        if (position !== null) {
+                            stepsSlider.noUiSlider.setHandle(handle, value + position)
+                        }
+
+                        break
+
+                    case 40:
+
+                        position = step[0]
+
+                        if (position === false) {
+                            position = 1
+                        }
+
+                        if (position !== null) {
+                            stepsSlider.noUiSlider.setHandle(handle, value - position)
+                        }
+
+                        break
+                }
+            })
+        })
+    })
+}
+
+function sorting() {
+    const mains = document.querySelectorAll('[data-sorting="main"]')
+
+    if (!mains.length) return
+
+    document.addEventListener('click', (event) => {
+        const el = event.target
+        if (el.closest('[data-sorting="main"]')) {
+            const sorting = el.closest('[data-sorting="main"]')
+
+            if (el.closest('[data-sorting="block-head"]')) {
+                sorting.classList.toggle('active')
+            }
+
+            if (el.closest('.radio')) {
+                sorting.classList.remove('active')
+            }
+
+        } else {
+            mains.forEach(main => main.classList.remove('active'))
+        }
+    })
+}
+
+function comparison() {
+    const main = document.querySelector('[data-comparison="main"]')
+
+    if (!main) return
+
+    const slider = main.querySelector('[data-comparison="slider"]')
+    const btnNext = main.querySelector('[data-comparison="btn-next"]')
+    const btnPrev = main.querySelector('[data-comparison="btn-prev"]')
+
+    const swiper = new Swiper(slider, {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        navigation: {
+            nextEl: btnNext,
+            prevEl: btnPrev,
+        },
+        breakpoints: {
+            1200: {
+                slidesPerView: 3,
+                spaceBetween: 20,
+            },
+            768: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+            },
+        }
+    })
+}
+
 validateForm()
 phoneMask()
 page()
@@ -601,5 +793,9 @@ map()
 productCard()
 listData()
 barPrice()
+catalog()
+filterRange()
+sorting()
+comparison()
 
 customScrollbar()

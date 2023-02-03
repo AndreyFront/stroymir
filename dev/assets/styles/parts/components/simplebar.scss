@@ -3,12 +3,39 @@ body {
         padding-right: 15px;
         -ms-overflow-style: none;
         scrollbar-width: none;
-    
+
         &::-webkit-scrollbar {
             display: none;
         }
+
+        &.scrollbar-custom {
+            .simplebar-scrollbar.simplebar-visible {
+                &::before {
+                    background: $color-2;
+                }
+            }
+
+            .simplebar-track.simplebar-vertical .simplebar-scrollbar:before {
+                top: 0 !important;
+                bottom: 0 !important;
+            }
+
+            .simplebar-track.simplebar-vertical {
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    left: 1px;
+                    width: 2px;
+                    border-radius: 2px;
+                    background-color: $color-8;
+                }
+            }
+        }
     }
-    
+
     .simplebar-scrollbar.simplebar-visible {
         &::before {
             opacity: 1 !important;
@@ -16,12 +43,12 @@ body {
             background: $color-12;
         }
     }
-    
+
     .simplebar-scrollbar:before {
         left: 0px !important;
         right: 4px !important;
     }
-    
+
     .simplebar-track.simplebar-vertical .simplebar-scrollbar:before {
         top: 16px !important;
         bottom: 16px !important;

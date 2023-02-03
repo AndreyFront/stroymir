@@ -10,10 +10,14 @@
         .ymaps-2-1-79-map {
             height: 100% !important;
         }
+
+        .ymaps-2-1-79-gototech {
+            display: none;
+        }
     }
 
     iframe {
         width: 100%;
-        height: 100%;   
+        height: 100%;
     }
 }

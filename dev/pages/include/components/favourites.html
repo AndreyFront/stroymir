@@ -253,8 +253,11 @@
                 </div>
             </div>
         </div>
-        <a href="#" class="btn btn--theme--primary favourites__btn-more">
-            <span class="btn__text">Показать еще (4)</span>
-        </a>
+        <div class="favourites__block-nav">
+            @include('../ui/pagination.html')
+            <a href="#" class="btn btn--theme--primary favourites__btn-more">
+                <span class="btn__text">Показать еще (4)</span>
+            </a>
+        </div>
     </div>
 </section>

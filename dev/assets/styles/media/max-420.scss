@@ -1,1 +1,19 @@
-@media screen and (max-width: 420px) {}
+@media screen and (max-width: 420px) {
+
+    .not-found {
+        &__block-btns {
+            grid-template-columns: 1fr;
+            grid-row-gap: 8px;
+        }
+
+        .btn {
+            width: 100%;
+        }
+    }
+
+    .catalog {
+        &__wrap-filter {
+            width: 100%;
+        }
+    }
+}

@@ -1,0 +1,40 @@
+.pagination {
+
+    &__list {
+        display: grid;
+        grid-auto-columns: max-content;
+        grid-auto-flow: column;
+        border: 1px solid $color-8;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    &__li {
+        transition: background-color $transition-time;
+
+        &:not(:last-child) {
+            border-right: 1px solid $color-8;
+        }
+
+        &.active {
+            background-color: $color-2;
+
+            .pagination__link {
+                color: $color-1;
+            }
+        }
+    }
+
+    &__link {
+        display: grid;
+        align-items: center;
+        justify-content: center;
+        min-width: 43px;
+        height: 47px;
+        color: $main-color;
+        line-height: 1em;
+        @include adaptiv-font(18, 16);
+        font-weight: 600;
+        transition: color $transition-time;
+    }
+}

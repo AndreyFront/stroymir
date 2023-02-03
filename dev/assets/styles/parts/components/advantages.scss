@@ -5,9 +5,9 @@
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         align-items: center;
-        grid-column-gap: 104px;
+        grid-column-gap: 80px;
     }
-    
+
     &__li {
         display: grid;
         grid-template-columns: max-content auto;
@@ -24,7 +24,7 @@
 
     &__sign {
         @include adaptiv-font(24, 14);
-        font-weight: 500;
+        font-weight: 600;
         color: $color-2;
         letter-spacing: -0.2px;
     }

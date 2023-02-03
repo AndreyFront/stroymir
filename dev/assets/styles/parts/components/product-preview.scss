@@ -11,8 +11,8 @@
         height: 198px;
         margin: 0 auto;
 
-        &:hover ~ .product-preview__title {
-            color: $color-2; 
+        &:hover~.product-preview__title {
+            color: $color-2;
         }
     }
 
@@ -21,6 +21,18 @@
         height: 100%;
         object-fit: contain;
         object-position: center;
+    }
+
+    &__availability {
+        @include adaptiv-font(14, 12);
+
+        &--in-stock {
+            color: $color-2;
+        }
+
+        &--out-of-stock {
+            color: $color-9;
+        }
     }
 
     &__title {
@@ -33,6 +45,7 @@
         display: -webkit-box;
         -webkit-box-orient: vertical;
         overflow: hidden;
+        margin-top: 8px;
     }
 
     &__wrap-price {

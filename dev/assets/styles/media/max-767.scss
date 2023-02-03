@@ -1,6 +1,14 @@
 @media screen and (max-width: 767px) {
+    .header {
+        &__wrap-links {
+            padding: 0 0 16px 0;
+            border-top: 0;
+            height: 37px;
+        }
+    }
+
     .footer {
-        padding: 40px 0 24px 0;
+        padding: 40px 0 120px 0;
 
         &__wrap-nav {
             grid-auto-columns: 1fr;
@@ -264,6 +272,13 @@
                 opacity: 0;
                 transform: translateY(10px);
             }
+        }
+    }
+
+    .catalog-adjustable {
+
+        &__wrap-content {
+            grid-template-columns: repeat(2, 1fr);
         }
     }
 }

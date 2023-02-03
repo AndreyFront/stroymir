@@ -1,0 +1,88 @@
+.radio {
+
+    &:not([disabled]):hover>&__label &__text {
+        color: $main-color;
+        cursor: pointer;
+    }
+
+    &:not([disabled]):hover>&__label &__decore::before {
+        border-color: $main-color;
+    }
+
+    &[disabled] {
+        opacity: 0.6;
+        pointer-events: none;
+    }
+
+    &.active {
+        .radio__decore::before {
+            border-color: $main-color;
+        }
+
+        .radio__decore::after {
+            opacity: 1;
+        }
+    }
+
+    &__label {
+        position: relative;
+        display: grid;
+        padding-left: 29px;
+    }
+
+    &__input {
+        position: absolute;
+        z-index: -1;
+        opacity: 0;
+        display: none;
+
+        &:checked~.radio__decore::before {
+            border-color: $color-9;
+        }
+
+        &:checked~.radio__decore::after {
+            opacity: 1;
+        }
+    }
+
+    &__text {
+        color: $color-9;
+        transition: color $transition-time;
+    }
+
+    &__decore {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 18px;
+        height: 18px;
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        &::before {
+            width: 18px;
+            height: 18px;
+            border: 1px solid;
+            border-radius: 100px;
+            border-color: $color-9;
+            transition: border-color $transition-time;
+        }
+
+        &::after {
+            width: 8px;
+            height: 8px;
+            border-radius: 100px;
+            background-color: $main-color;
+            opacity: 0;
+            transition: opacity $transition-time;
+        }
+    }
+}

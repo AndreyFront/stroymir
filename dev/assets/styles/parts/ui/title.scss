@@ -5,6 +5,10 @@
         color: $color-2;
     }
 
+    &--h1 {
+        line-height: 1.38em;
+    }
+
     &--h1,
     &--h2 {
         font-weight: 600;

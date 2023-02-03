@@ -9,6 +9,7 @@
 
     &--fixed {
         .header {
+
             &__wrap-nav,
             &__wrap-links {
                 height: 0px;
@@ -73,8 +74,9 @@
     }
 
     &__wrap-links {
-        padding-bottom: 24px;
-        height: 43px;
+        padding: 24px 0;
+        border-top: 1px solid rgba(235, 236, 236, 0.7);
+        height: 73px;
     }
 
     &__links-list {
@@ -84,7 +86,9 @@
         align-items: center;
         justify-content: space-between;
         grid-column-gap: 16px;
-        overflow-y: auto;
+        overflow-x: auto;
+        overflow-y: hidden;
+        padding-bottom: 5px;
     }
 
     &__links-li {}

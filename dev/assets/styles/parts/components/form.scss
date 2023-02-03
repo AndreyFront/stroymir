@@ -21,18 +21,35 @@
 
     &__privacy-policy .checkbox__text,
     &__privacy-policy .checkbox__text a {
-        @include adaptiv-font(14, 12);   
+        @include adaptiv-font(14, 12);
     }
 
     &__privacy-policy {
         margin-top: 24px;
 
         .checkbox {
+            &__label {
+                padding-left: 24px;
+            }
+
             &__text {
+                @include adaptiv-font(14, 12);
                 color: $color-9;
+                line-height: 1.57;
 
                 a {
                     color: $color-2;
+                }
+            }
+
+            &__decore {
+                top: 5px;
+                width: 16px;
+                height: 16px;
+
+                &::before {
+                    width: 16px;
+                    height: 16px;
                 }
             }
         }

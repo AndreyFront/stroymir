@@ -12,7 +12,7 @@
         }
     }
 
-    &:not([disabled]):hover > &__label &__text {
+    &:not([disabled]):hover>&__label &__text {
         color: $main-color;
         cursor: pointer;
     }
@@ -23,7 +23,7 @@
                 background-color: $color-2;
                 border-color: $color-2;
             }
-    
+
             &__decore::after {
                 opacity: 1;
             }
@@ -33,7 +33,7 @@
     &__label {
         position: relative;
         display: grid;
-        padding-left: 28px;
+        padding-left: 35px;
     }
 
     &__input {
@@ -42,29 +42,32 @@
         opacity: 0;
         display: none;
 
-        &:checked ~ .checkbox__decore::before {
+        &:checked~.checkbox__text {
+            color: $main-color;
+        }
+
+        &:checked~.checkbox__decore::before {
             background-color: $color-2;
             border-color: $color-2;
         }
 
-        &:checked ~ .checkbox__decore::after {
+        &:checked~.checkbox__decore::after {
             opacity: 1;
         }
     }
 
     &__text {
         font-size: 16px;
-        color: $main-color;
-        line-height: 1.4em;
+        color: $color-9;
+        line-height: 1.6em;
         transition: color $transition-time;
     }
 
     &__decore {
         position: absolute;
-        left: 0;
-        top: 5px;
-        width: 20px;
-        height: 20px;
+        left: 1px;
+        width: 24px;
+        height: 24px;
 
         &::before,
         &::after {
@@ -77,8 +80,8 @@
         }
 
         &::before {
-            width: 20px;
-            height: 20px;
+            width: 24px;
+            height: 24px;
             border: 1px solid $color-9;
             background-color: $color-1;
             transition: border-color $transition-time, background-color $transition-time;
