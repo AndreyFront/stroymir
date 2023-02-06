@@ -235,7 +235,8 @@
         }
     }
 
-    .favourites {
+    .favourites,
+    .search-results {
         &__wrap-cards {
             grid-template-columns: repeat(2, 1fr);
         }

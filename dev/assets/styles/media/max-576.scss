@@ -341,15 +341,6 @@
         }
     }
 
-    .favourites {
-        padding-bottom: 0;
-
-        &__wrap-cards {
-            grid-column-gap: 8px;
-            grid-row-gap: 8px;
-        }
-    }
-
     .catalog-adjustable {
 
         &__wrap-content {
@@ -420,8 +411,15 @@
         }
     }
 
-    .favourites {
+    .favourites,
+    .search-results {
         margin-top: 24px;
+        padding-bottom: 0;
+
+        &__wrap-cards {
+            grid-column-gap: 8px;
+            grid-row-gap: 8px;
+        }
 
         &__block-nav {
             grid-template-columns: 1fr;
