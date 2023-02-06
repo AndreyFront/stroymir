@@ -313,4 +313,16 @@
             top: 5px;
         }
     }
+
+    .making-order {
+        &__block-stage {
+            &--checkbox {
+                .making-order {
+                    &__wrap-content {
+                        grid-template-columns: repeat(2, 1fr);
+                    }
+                }
+            }
+        }
+    }
 }

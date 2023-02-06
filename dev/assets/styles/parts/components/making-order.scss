@@ -1,0 +1,316 @@
+.making-order {
+
+    &__wrap-decoration {
+        display: grid;
+        grid-row-gap: 16px;
+    }
+
+    &__block-stage {
+
+        &--product-cards {
+
+            .making-order {
+                &__stage-content {
+                    background-color: transparent;
+                    border-color: transparent;
+                }
+
+                &__wrap-content {
+                    display: grid;
+                    grid-row-gap: 8px;
+                    margin-top: 16px;
+                    padding: 0;
+                    border-color: transparent;
+                }
+
+                &__block-head {
+                    border-color: $color-19;
+                }
+
+                &__block-body {
+                    padding: 0;
+                }
+            }
+        }
+
+        &--radio {
+            .making-order {
+                &__wrap-content {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 16px 60px;
+                }
+            }
+        }
+
+        &--checkbox {
+            .making-order {
+                &__wrap-content {
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    grid-column-gap: 23px;
+                    grid-row-gap: 23px;
+                }
+            }
+        }
+
+        &--form {
+            .making-order {
+                &__wrap-content {
+                    display: grid;
+                    grid-row-gap: 16px;
+                    max-width: 686px;
+                }
+
+                &__block-btns {
+                    grid-template-columns: auto minmax(250px, 557px) max-content;
+                    grid-column-gap: 24px;
+                }
+            }
+        }
+
+        &.active {
+            .making-order {
+                &__number-stage {
+                    opacity: 0;
+                }
+
+                &__number-stage-icon,
+                &__btn-edit {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    &__stage-content {
+        border: 1px solid;
+        border-color: $color-19;
+        border-radius: 10px;
+    }
+
+    &__block-head {
+        display: grid;
+        grid-template-columns: repeat(2, max-content);
+        align-items: center;
+        justify-content: space-between;
+        padding: 24px;
+        border: 1px solid;
+        border-color: transparent;
+        border-radius: 10px;
+    }
+
+    &__block-stage-title {
+        display: grid;
+        grid-template-columns: max-content auto;
+        align-items: center;
+        grid-column-gap: 16px;
+    }
+
+    &__block-number-stage {
+        position: relative;
+        display: grid;
+        align-items: center;
+        justify-content: center;
+        width: 24px;
+        height: 24px;
+        border-radius: 100%;
+        background-color: $color-2;
+        overflow: hidden;
+    }
+
+    &__number-stage,
+    &__number-stage-icon,
+    &__btn-edit {
+        transition: opacity $transition-time;
+    }
+
+    &__number-stage {
+        font-weight: 600;
+        color: $color-1;
+        opacity: 1;
+    }
+
+    &__number-stage-icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 12px;
+        height: 12px;
+        object-fit: contain;
+        object-position: center;
+        opacity: 0;
+    }
+
+    &__stage-title {
+        color: $color-20;
+        font-weight: 600;
+    }
+
+    &__btn-edit {
+        background-color: transparent;
+        border: none;
+        padding: 0;
+        margin: 0;
+        color: $color-16;
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    &__block-btns {
+        display: grid;
+        grid-auto-columns: auto;
+        grid-auto-flow: column;
+        margin-top: 16px;
+    }
+
+    &__btn-forth {
+        justify-self: end;
+    }
+
+    &__wrap-cards {}
+
+    &__wrap-content {}
+
+    &__block-body {
+        position: relative;
+        padding: 24px;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 24px;
+            right: 24px;
+            height: 1px;
+            background-color: $color-19;
+        }
+    }
+
+    &__block-result {}
+
+    &__result-property {
+        color: $color-9;
+    }
+
+    &__result-value {
+        color: $color-20;
+    }
+
+    &__stage-checkbox {
+        position: relative;
+        height: 100%;
+
+        .checkbox {
+            &__label {
+                padding-left: 0;
+                height: 100%;
+            }
+
+            &__input {
+                &:checked~.checkbox__decore::before {
+                    background-color: $main-color;
+                    border-color: $main-color;
+                }
+            }
+
+            &__decore {
+                left: auto;
+                top: 16px;
+                right: 16px;
+                width: 20px;
+                height: 20px;
+
+                &::before {
+                    width: 20px;
+                    height: 20px;
+                    border: 1px solid $color-22;
+                    background-color: $color-4;
+                }
+
+                &::after {
+                    width: 14px;
+                    height: 14px;
+                    background-image: url('../images/tick-2.svg');
+                }
+            }
+        }
+    }
+
+    &__checkbox-content {
+        padding: 16px;
+        background-color: $color-4;
+        border-radius: 6px;
+        cursor: pointer;
+        height: 100%;
+    }
+
+    &__checkbox-title {
+        display: grid;
+        padding-right: 30px;
+        font-weight: 600;
+    }
+
+    &__checkbox-block-text {
+        display: grid;
+        grid-row-gap: 8px;
+        margin-top: 24px;
+
+        span {
+            font-size: 14px;
+            color: $color-11;
+            line-height: 1.4em;
+        }
+    }
+
+    &__checkbox-important-info {
+        display: grid;
+        margin-top: 16px;
+        color: $color-2;
+        font-size: 14px;
+        line-height: 1.35em;
+    }
+
+    &__block-input {
+        display: grid;
+        grid-template-columns: max-content minmax(250px, 513px);
+        align-items: center;
+        justify-content: space-between;
+
+        .input,
+        .textarea {
+            border-radius: 6px;
+        }
+    }
+
+    &__privacy-policy,
+    &__privacy-policy a {
+        @include adaptiv-font(16, 14);
+        line-height: 1.4em;
+    }
+
+    &__privacy-policy {
+        margin-left: auto;
+
+        a {
+            color: $color-2;
+            text-decoration: none;
+            border-bottom: 1px solid;
+            border-bottom-color: transparent;
+            transition: border-bottom-color $transition-time;
+
+            &:hover {
+                border-bottom-color: $color-2;
+            }
+        }
+    }
+
+    .bifurcation {
+        margin-top: 16px;
+    }
+
+    .order-details {
+        width: 355px;
+    }
+}

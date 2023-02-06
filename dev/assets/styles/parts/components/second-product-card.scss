@@ -1,0 +1,59 @@
+.second-product-card {
+    display: grid;
+    grid-template-columns: max-content minmax(280px, 347px) auto max-content;
+    align-items: center;
+    grid-column-gap: 24px;
+    padding: 24px 40px;
+    border: 1px solid $color-19;
+    border-radius: 10px;
+
+    &__image {
+        width: 124px;
+        height: 124px;
+        object-fit: contain;
+        object-position: center;
+    }
+
+    &__block-info {
+        display: grid;
+        grid-row-gap: 19px;
+        align-content: space-between;
+        width: 100%;
+    }
+
+    &__name {
+        @include adaptiv-font(18, 16);
+        color: $color-21;
+        line-height: 1.35em;
+    }
+
+    &__art {
+        color: $color-9;
+    }
+
+    &__quantity {
+        @include adaptiv-font(16, 14);
+        color: $color-9;
+        text-align: center;
+    }
+
+    &__block-price {
+        display: grid;
+        grid-row-gap: 8px;
+        align-content: start;
+        justify-items: end;
+        height: 100%;
+    }
+
+    &__price {
+        @include adaptiv-font(24, 14);
+        font-weight: 600;
+        letter-spacing: -0.2px;
+    }
+
+    &__old-price {
+        @include adaptiv-font(18, 14);
+        color: $color-9;
+        text-decoration: line-through;
+    }
+}

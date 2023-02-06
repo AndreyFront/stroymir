@@ -3,7 +3,7 @@
 
 <head>
     @include('./include/layouts/head.html', {
-    "title": "Результаты поиска"
+    "title": "Заказ сформирован"
     })
 </head>
 
@@ -11,7 +11,7 @@
     <div class="wrapper-page">
         @include('./include/layouts/header.html')
         <main class="page" data-page="main">
-            <div class="search-results-not-found-page" data-page="wrapper-content">
+            <div class="order-placed-page" data-page="wrapper-content">
                 <!-- @include('./include/components/name.html') -->
 
                 @include('./include/components/bread-crumbs.html')
@@ -21,15 +21,15 @@
                         <img src="./assets/images/picture-3-mob.jpg" alt="">
                     </picture>
                     <div class="main-container max-width">
-                        <h1 class="title title--h1 title-reset">Поиск</h1>
+                        <h1 class="title title--h1 title-reset">Оформление заказа</h1>
                         <div class="not-found__wrap-content">
                             <div class="not-found__block-image">
-                                <img src="./assets/images/big-magnifer.svg" class="not-found__image" alt="">
+                                <img src="./assets/images/big-tablet.svg" class="not-found__image" alt="">
                             </div>
                             <div class="not-found__block-info">
-                                <span class="not-found__title">Попробуйте еще раз</span>
+                                <span class="not-found__title">Заказ сформирован</span>
                                 <span class="not-found__subtitle">
-                                    По вашему запросу ничего не найдено
+                                    На вашу почту отправлено письмо с подробной информацией о заказе
                                 </span>
                             </div>
                             <div class="not-found__block-btns">

@@ -459,4 +459,101 @@
             }
         }
     }
+
+    .making-order {
+
+        &__block-stage {
+            &--checkbox {
+                .making-order {
+                    &__wrap-content {
+                        grid-template-columns: 1fr;
+                        grid-row-gap: 8px;
+                    }
+                }
+            }
+
+            &--form {
+                .making-order {
+                    &__wrap-content {
+                        grid-row-gap: 8px;
+                    }
+
+                    &__block-btns {
+                        grid-column-gap: 11px;
+                    }
+                }
+            }
+        }
+
+        &__result-property {
+            display: none;
+        }
+
+        &__checkbox-title {
+            font-weight: 400;
+        }
+
+        &__checkbox-block-text {
+            margin-top: 10px;
+        }
+
+        &__block-head {
+            padding: 8px;
+        }
+
+        &__block-stage-title {
+            grid-column-gap: 8px;
+        }
+
+        &__block-btns {
+            .btn {
+                padding: 5px 7px;
+            }
+        }
+
+        &__block-body {
+            padding: 16px 8px 8px 8px;
+
+            &::before {
+                left: 8px;
+                right: 8px;
+            }
+        }
+
+        &__block-stage {
+            &--product-cards {
+                .making-order {
+                    &__wrap-content {
+                        margin-top: 8px;
+                    }
+                }
+            }
+        }
+    }
+
+    .second-product-card {
+        padding: 8px;
+
+        &__name {
+            height: 66px;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+        }
+    }
+
+    .order-details {
+        padding: 16px;
+
+        &__list {
+            margin-top: 16px;
+        }
+
+        &__block-result {
+            padding-top: 0;
+            margin-top: 24px;
+            border-top: none;
+        }
+    }
 }
