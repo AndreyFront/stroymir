@@ -325,4 +325,12 @@
             }
         }
     }
+
+    .cart {
+        .second-product-card {
+            &__quantity {
+                padding-right: 20px;
+            }
+        }
+    }
 }

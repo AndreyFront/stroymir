@@ -12,7 +12,8 @@
         }
     }
 
-    &:not([disabled]):hover>&__label &__text {
+    &:not([disabled]):hover>&__label &__text,
+    &:not([disabled]):hover>&__label &__decore {
         color: $main-color;
         cursor: pointer;
     }

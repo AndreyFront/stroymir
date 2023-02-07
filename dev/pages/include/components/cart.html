@@ -1,0 +1,80 @@
+<section class="cart">
+    <div class="main-container max-width">
+        <h1 class="title title--h1 title-reset">Моя корзина</h1>
+        <div class="cart__wrap-content">
+            <div class="cart__block-selection">
+                <div class="checkbox">
+                    <label data-role="" class="checkbox__label">
+                        <input type="checkbox" class="checkbox__input" name="" value="">
+                        <span class="checkbox__text">Выбрать все <span>(2)</span></span>
+                        <span class="checkbox__decore"></span>
+                    </label>
+                </div>
+                <a href="#" class="cart__btn-del link-reset">Удалить выбранное</a>
+            </div>
+            <div class="cart__wrap-cards">
+                <div class="second-product-card">
+                    <div class="checkbox">
+                        <label data-role="" class="checkbox__label">
+                            <input type="checkbox" class="checkbox__input" name="" value="">
+                            <span class="checkbox__decore"></span>
+                        </label>
+                    </div>
+                    <img src="./assets/images/product-1.jpeg" class="second-product-card__image" alt="">
+                    <div class="second-product-card__block-info">
+                        <span class="second-product-card__name">Ведро пластиковое строительное 20 литров
+                            черное с ручкой метал(900 палетта)</span>
+                        <span class="second-product-card__art">Артикул М1726 </span>
+                    </div>
+                    <span class="second-product-card__quantity">
+                        @include('../ui/counter.html')
+                        <div class="second-product-card__wrap-btns">
+                            <a href="#" class="second-product-card__btn link-reset">Удалить</a>
+                            <a href="#" class="second-product-card__btn link-reset">В избранное</a>
+                        </div>
+                    </span>
+                    <div class="second-product-card__block-price">
+                        <span class="second-product-card__price">254.00р</span>
+                        <span class="second-product-card__old-price">380.00р</span>
+                    </div>
+                </div>
+                <div class="second-product-card">
+                    <div class="checkbox">
+                        <label data-role="" class="checkbox__label">
+                            <input type="checkbox" class="checkbox__input" name="" value="">
+                            <span class="checkbox__decore"></span>
+                        </label>
+                    </div>
+                    <img src="./assets/images/product-2.jpeg" class="second-product-card__image" alt="">
+                    <div class="second-product-card__block-info">
+                        <span class="second-product-card__name">Ведро пластиковое строительное</span>
+                        <span class="second-product-card__art">Артикул М1726 </span>
+                    </div>
+                    <span class="second-product-card__quantity">
+                        @include('../ui/counter.html')
+                        <div class="second-product-card__wrap-btns">
+                            <a href="#" class="second-product-card__btn link-reset">Удалить</a>
+                            <a href="#" class="second-product-card__btn link-reset">В избранное</a>
+                        </div>
+                    </span>
+                    <div class="second-product-card__block-price">
+                        <span class="second-product-card__price">254.00р</span>
+                        <span class="second-product-card__old-price">380.00р</span>
+                    </div>
+                </div>
+            </div>
+            <div class="cart__wrpa-result">
+                <div class="cart__block-price">
+                    <span class="cart__price-sign">Итого:</span>
+                    <div class="cart__inner-price">
+                        <span class="cart__price">655 ₽</span>
+                        <span class="cart__old-price">875 ₽</span>
+                    </div>
+                </div>
+                <a href="#" class="btn btn--theme--primary">
+                    <span class="btn__text">Оформить заказ</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
