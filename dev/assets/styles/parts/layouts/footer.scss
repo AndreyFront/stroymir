@@ -1,6 +1,6 @@
 .footer {
     flex: 0 0 auto;
-    padding: 64px 0 56px 0;
+    padding: 36px 0;
     background-color: $color-5;
 
     &__wrap-links {
@@ -107,8 +107,8 @@
         grid-auto-flow: column;
         align-items: center;
         justify-content: space-between;
-        margin-top: 114px;
-        padding-top: 24px;
+        margin-top: 60px;
+        padding-top: 18px;
         border-top: 1px solid $color-8;
     }
 
