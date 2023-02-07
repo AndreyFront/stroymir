@@ -1,0 +1,75 @@
+.personal-account {
+
+    &__wrap-cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-column-gap: 40px;
+        grid-row-gap: 40px;
+        margin-top: 24px;
+    }
+
+    &__card {
+        display: grid;
+        grid-template-columns: auto max-content;
+        grid-column-gap: 20px;
+        justify-content: space-between;
+        text-decoration: none;
+        padding: 24px;
+        background-color: $color-4;
+        border-radius: 10px;
+        min-height: 184px;
+        height: 100%;
+        transition: background-color $transition-time;
+
+        &:hover {
+            background-color: $color-2;
+        }
+
+        &:hover .personal-account__card-title,
+        &:hover .personal-account__card-info-text {
+            color: $color-1;
+        }
+
+        &:hover .personal-account__icon use {
+            stroke: $color-1;
+        }
+    }
+
+    &__card-info {}
+
+    &__card-title {
+        @include adaptiv-font(24, 20);
+        font-weight: 600;
+        color: $main-color;
+        letter-spacing: -0.2px;
+        transition: color $transition-time;
+    }
+
+    &__card-info-block-text {
+        display: grid;
+        margin-top: 16px;
+    }
+
+    &__card-info-text {
+        color: $color-9;
+        line-height: 1.4em;
+        transition: color $transition-time;
+    }
+
+    &__icon {
+        width: 56px;
+        height: 56px;
+
+        use {
+            stroke-width: 3;
+            stroke: $color-2;
+            fill: transparent;
+            transition: stroke $transition-time, fill $transition-time;
+        }
+    }
+
+    &__btn-logout {
+        margin-top: 24px;
+        margin-left: auto;
+    }
+}

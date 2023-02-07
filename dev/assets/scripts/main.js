@@ -777,6 +777,28 @@ function comparison() {
     })
 }
 
+function navBar() {
+    if (window.matchMedia("(max-width: 1200px)").matches) {
+        const main = document.querySelector('[data-nav-bar="main"]')
+
+        if (!main) return
+
+        const blockMob = main.querySelector('[data-nav-bar="block-mob"]')
+
+        document.addEventListener('click', (event) => {
+            const el = event.target
+            if (el.closest('[data-nav-bar="main"]')) {
+                if (el.closest('[data-nav-bar="block-mob"]')) {
+                    blockMob.classList.toggle('active')
+                }
+            } else {
+                blockMob.classList.remove('active')
+            }
+        })
+    }
+}
+
+
 validateForm()
 phoneMask()
 page()
@@ -796,5 +818,6 @@ catalog()
 filterRange()
 sorting()
 comparison()
+navBar()
 
 customScrollbar()

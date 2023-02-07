@@ -1,0 +1,42 @@
+.personal-data {
+
+    &__wrap-info {
+        padding: 40px;
+        background-color: $color-4;
+        box-shadow: 0px 4px 25px rgba(150, 195, 255, 0.06);
+        border-radius: 16px;
+    }
+
+    &__inner-data {
+        display: grid;
+        grid-row-gap: 16px;
+        max-width: 679px;
+    }
+
+    &__block-data {
+        display: grid;
+        grid-template-columns: max-content minmax(200px, 479px);
+        align-items: center;
+        justify-content: space-between;
+        grid-column-gap: 20px;
+
+        .input {
+            padding: 0 24px;
+            background-color: $color-1;
+            color: $main-color;
+        }
+    }
+
+    &__sign-data {
+        font-weight: 600;
+    }
+
+    .nav-bar {
+        width: 433px;
+    }
+
+    .bifurcation {
+        grid-template-columns: minmax(550px, 907px) max-content;
+        margin-top: 24px;
+    }
+}

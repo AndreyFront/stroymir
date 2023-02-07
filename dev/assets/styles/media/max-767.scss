@@ -394,4 +394,21 @@
             }
         }
     }
+
+    .personal-account {
+        &__wrap-cards {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .personal-data {
+
+        &__sign-data {
+            display: none;
+        }
+
+        &__block-data {
+            grid-template-columns: 1fr;
+        }
+    }
 }
