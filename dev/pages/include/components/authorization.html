@@ -1,0 +1,46 @@
+<section class="authorization">
+    <picture class="authorization__bg">
+        <source srcset="./assets/images/picture-3.jpg" media="(min-width: 992px)">
+        <img src="./assets/images/picture-3-mob.jpg" alt="">
+    </picture>
+    <div class="main-container max-width">
+        <h1 class="title title--h1 title-reset">Авторизация</h1>
+        <div class="authorization__wrap-content">
+            <div class="form">
+                <form action="" class="form__form" data-validate-form>
+                    <div class="form__wrap-fields">
+                        <input type="text" class="input" placeholder="Имя" data-input-type="name" minlength="2">
+                        <input type="text" class="input" placeholder="Фамилия" data-input-type="surname" minlength="2">
+                        <input type="text" class="input" placeholder="Телефон" data-input-type="tel" data-phone-mask>
+                        <input type="text" class="input" placeholder="Email" data-input-type="email" required>
+                        <div class="box-input" data-box-input="main">
+                            <div class="box-input__inner">
+                                <input type="password" class="input" placeholder="Пароль*" data-box-input="input"
+                                    required>
+                                <img class="box-input__icon" src="./assets/images/eye-closed.svg" alt=""
+                                    data-box-input="icon">
+                            </div>
+                            <span class="box-input__message">Слабый пароль</span>
+                        </div>
+                        <div class="box-input" data-box-input="main">
+                            <div class="box-input__inner">
+                                <input type="password" class="input" placeholder="Повторите пароль*"
+                                    data-box-input="input" required>
+                                <img class="box-input__icon" src="./assets/images/eye-closed.svg" alt=""
+                                    data-box-input="icon">
+                            </div>
+                            <span class="box-input__message">Слабый пароль</span>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn--theme--primary">
+                        <span class="btn__text">Авторизоваться</span>
+                    </button>
+                    <span class="form__privacy-policy">
+                        Нажимая на кнопку, вы соглашаетесь на <a href="#">обработку персональных данных</a>
+                    </span>
+                    <a href="#" class="form__link link-reset">У вас есть аккаунт? Войдите</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

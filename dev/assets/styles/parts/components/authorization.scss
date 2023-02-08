@@ -1,0 +1,76 @@
+.authorization {
+    position: relative;
+    padding: 0 0 80px 0;
+
+    &__bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+        * {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+
+    .main-container {
+        position: relative;
+        z-index: 1;
+    }
+
+    .title {
+        margin-bottom: 16px;
+    }
+
+    .form {
+        margin: 0 auto;
+        padding: 32px;
+        width: 444px;
+        box-shadow: 0px 4px 25px rgba(150, 195, 255, 0.06);
+        border-radius: 16px;
+        border: none;
+
+        &__title {
+            @include adaptiv-font(24, 16);
+            display: grid;
+            text-align: center;
+            margin: 0 auto;
+            color: $color-18;
+        }
+
+        &__privacy-policy,
+        &__privacy-policy a {
+            font-size: 12px;
+            letter-spacing: -0.2px;
+        }
+
+        &__privacy-policy {
+            display: block;
+            color: $color-9;
+            margin-top: 8px;
+        }
+
+        &__privacy-policy a {
+            color: $color-2;
+        }
+
+        &__wrap-fields {
+            margin-top: 0;
+        }
+
+        .btn {
+            height: 46px;
+        }
+
+        .input {
+            border: 1px solid $color-8;
+            background-color: $color-1;
+            border-radius: 6px;
+            padding: 0 18px;
+        }
+    }
+}

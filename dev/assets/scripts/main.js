@@ -798,8 +798,35 @@ function navBar() {
     }
 }
 
+function boxInput() {
+    const mains = document.querySelectorAll('[data-box-input="main"]')
 
-validateForm()
+    if (!mains.length) return
+
+    document.addEventListener('click', (event) => {
+        const el = event.target
+        if (el.closest('[data-box-input="main"]')) {
+            const main = el.closest('[data-box-input="main"]')
+
+            if (el.closest('[data-box-input="icon"]')) {
+                const icon = el.closest('[data-box-input="icon"]')
+                const input = main.querySelector('[data-box-input="input"]')
+                const inputType = input.getAttribute('type')
+
+                if (inputType === 'text') {
+                    input.setAttribute('type', 'password')
+                    icon.setAttribute('src', './assets/images/eye-closed.svg')
+                } else if (inputType === 'password') {
+                    input.setAttribute('type', 'text')
+                    icon.setAttribute('src', './assets/images/eye.svg')
+                }
+            }
+        }
+    })
+}
+
+
+// validateForm()
 phoneMask()
 page()
 fixedHeader()
@@ -819,5 +846,6 @@ filterRange()
 sorting()
 comparison()
 navBar()
+boxInput()
 
 customScrollbar()

@@ -101,14 +101,16 @@
         &__wrap-info {
             order: 2;
         }
+    }
 
-        .nav-bar {
-            order: 1;
-        }
-
-        .bifurcation {
+    .bifurcation {
+        &--personal-account {
             grid-template-columns: 1fr;
             grid-row-gap: 8px;
+
+            .nav-bar {
+                order: 1;
+            }
         }
     }
 

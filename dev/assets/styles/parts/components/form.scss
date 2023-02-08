@@ -55,6 +55,63 @@
         }
     }
 
+    &__link {
+        display: grid;
+        margin-top: 16px;
+        text-align: center;
+        color: $color-2;
+        transition: color $transition-time;
+
+        &:hover {
+            color: $color-3;
+        }
+    }
+
+    &__wrap-actions {
+        display: grid;
+        grid-template-columns: repeat(2, max-content);
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 18px;
+
+        .checkbox {
+
+            &__text {
+                font-size: 12px;
+                color: $color-9;
+                letter-spacing: -0.2px;
+            }
+        }
+    }
+
+    &__link-reset {
+        font-size: 12px;
+        color: $color-2;
+        letter-spacing: -0.2px;
+        transition: color $transition-time;
+
+        &:hover {
+            color: $color-3;
+        }
+    }
+
+    &__message {
+        display: grid;
+        text-align: center;
+        margin-bottom: 16px;
+        @include adaptiv-font(18, 14);
+        line-height: 1.35em;
+    }
+
+    &__subtitle {
+        display: grid;
+        margin-top: 8px;
+        text-align: center;
+        @include adaptiv-font(18, 14);
+        color: $color-9;
+        line-height: 1.35em;
+    }
+
     .btn {
         width: 100%;
         margin-top: 24px;

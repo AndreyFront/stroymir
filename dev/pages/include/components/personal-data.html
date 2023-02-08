@@ -1,7 +1,7 @@
 <section class="personal-data">
     <div class="main-container max-width">
         <h1 class="title title--h1 title-reset">Личные данные</h1>
-        <div class="bifurcation">
+        <div class="bifurcation bifurcation--personal-account">
             <div class="personal-data__wrap-info">
                 <div class="personal-data__inner-data">
                     <div class="personal-data__block-data">
@@ -21,9 +21,38 @@
                         <input type="text" class="input" value="+7 918 343-23-43" disabled>
                     </div>
                     <div class="personal-data__block-data">
-                        <span class="personal-data__sign-data">Пароль</span>
-                        <input type="text" class="input" value="12345678qwerty" disabled>
+                        <span class="personal-data__sign-data">Новый пароль</span>
+                        <div class="box-input" data-box-input="main">
+                            <div class="box-input__inner">
+                                <input type="password" class="input" placeholder="Новый пароль" data-box-input="input">
+                                <img class="box-input__icon" src="./assets/images/eye-closed.svg" alt=""
+                                    data-box-input="icon">
+                            </div>
+                            <span class="box-input__message box-input__message--error">Слабый пароль</span>
+                        </div>
                     </div>
+                    <div class="personal-data__block-data">
+                        <span class="personal-data__sign-data">Подтверждение
+                            пароля</span>
+                        <div class="box-input" data-box-input="main">
+                            <div class="box-input__inner">
+                                <input type="password" class="input" placeholder="Подтверждение пароля"
+                                    data-box-input="input">
+                                <img class="box-input__icon" src="./assets/images/eye-closed.svg" alt=""
+                                    data-box-input="icon">
+                            </div>
+                            <span class="box-input__message">Пароль должен быть не менее 6 символов
+                                длиной</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="personal-data__block-btns">
+                    <a href="#" class="btn btn--theme--secondary">
+                        <span class="btn__text">Сбросить</span>
+                    </a>
+                    <a href="#" class="btn btn--theme--primary">
+                        <span class="btn__text">Сохранить</span>
+                    </a>
                 </div>
             </div>
             @include('./nav-bar.html')

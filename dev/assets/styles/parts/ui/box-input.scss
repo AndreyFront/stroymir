@@ -1,0 +1,39 @@
+.box-input {
+    display: grid;
+    grid-row-gap: 8px;
+
+    &__inner {
+        position: relative;
+    }
+
+    &__icon {
+        position: absolute;
+        right: 24px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 24px;
+        height: 24px;
+        cursor: pointer;
+        transition: opacity $transition-time;
+
+        &:hover {
+            opacity: 0.6;
+        }
+    }
+
+    &__message {
+        font-size: 12px;
+        letter-spacing: -0.2px;
+        color: $color-5;
+        transition: color $transition-time;
+
+        &--error {
+            color: $color-2;
+        }
+    }
+
+    .input {
+        width: 100%;
+        padding-right: 72px;
+    }
+}

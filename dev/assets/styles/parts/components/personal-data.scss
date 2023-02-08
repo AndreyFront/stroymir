@@ -15,7 +15,7 @@
 
     &__block-data {
         display: grid;
-        grid-template-columns: max-content minmax(200px, 479px);
+        grid-template-columns: minmax(50px, 185px) minmax(200px, 479px);
         align-items: center;
         justify-content: space-between;
         grid-column-gap: 20px;
@@ -27,16 +27,36 @@
         }
     }
 
+    &__block-input {
+        display: grid;
+        grid-row-gap: 8px;
+    }
+
+    &__input-message {
+        font-size: 12px;
+        letter-spacing: -0.2px;
+        color: $color-5;
+        transition: color $transition-time;
+
+        &--error {
+            color: $color-2;
+        }
+    }
+
     &__sign-data {
         font-weight: 600;
     }
 
-    .nav-bar {
-        width: 433px;
-    }
+    &__block-btns {
+        display: grid;
+        grid-auto-columns: max-content;
+        grid-auto-flow: column;
+        grid-column-gap: 22px;
+        grid-row-gap: 8px;
+        margin-top: 40px;
 
-    .bifurcation {
-        grid-template-columns: minmax(550px, 907px) max-content;
-        margin-top: 24px;
+        .btn {
+            width: 168px;
+        }
     }
 }

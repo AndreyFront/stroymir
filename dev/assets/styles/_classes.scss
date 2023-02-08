@@ -68,6 +68,15 @@ a {
     grid-column-gap: 40px;
     align-items: start;
 
+    &--personal-account {
+        grid-template-columns: minmax(550px, 907px) max-content;
+        margin-top: 24px;
+
+        .nav-bar {
+            width: 433px;
+        }
+    }
+
     .form {
         position: sticky;
         top: 110px;

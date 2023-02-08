@@ -672,8 +672,43 @@
             }
         }
 
-        .nav-bar {
+        &__block-btns {
+            grid-auto-columns: 1fr;
+            grid-auto-flow: row;
+            margin-top: 16px;
+
+            .btn {
+                width: 100%;
+                height: 46px;
+            }
+        }
+    }
+
+    .bifurcation {
+        &--personal-account {
+
+            .nav-bar {
+                width: 100%;
+            }
+        }
+    }
+
+    .box-input {
+        &__icon {
+            right: 14px;
+        }
+
+        .input {
+            padding: 0 52px 0 14px;
+        }
+    }
+
+    .authorization {
+        padding: 0 0 40px 0;
+
+        .form {
             width: 100%;
+            padding: 20px;
         }
     }
 }
