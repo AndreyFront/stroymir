@@ -1,0 +1,68 @@
+.alert {
+    position: relative;
+    max-width: 100%;
+    box-shadow: 0px 4px 20px rgba(40, 42, 58, 0.1);
+    border-radius: 10px;
+    padding: 28px 24px 28px 56px;
+    color: $color-1;
+    background-color: $color-2;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 29px;
+        left: 24px;
+        width: 24px;
+        height: 24px;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        background-image: url('../images/check-circle-2.svg');
+    }
+
+    &__content {
+        display: grid;
+        grid-row-gap: 8px;
+    }
+
+    &__title {
+        font-weight: 600;
+    }
+
+    &__block-text {
+        display: grid;
+        grid-row-gap: 10px;
+
+        p {
+            margin: 0;
+            font-size: 18px;
+            line-height: 1.5em;
+            font-weight: 600;
+        }
+
+        .alert__btn {
+            display: inline-block;
+            margin-left: 10px;
+        }
+    }
+
+    &__btn {
+        padding: 0;
+        width: max-content;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-bottom: 1px solid;
+        border-bottom-color: $color-1;
+        color: $color-1;
+        font-weight: 500;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: transparent;
+        transition: border-bottom-color $transition-time;
+
+        &:hover {
+            border-bottom-color: transparent;
+        }
+    }
+}

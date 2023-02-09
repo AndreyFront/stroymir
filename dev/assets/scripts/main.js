@@ -850,6 +850,44 @@ function orderCard() {
     })
 }
 
+function modal() {
+    return new HystModal({
+        linkAttributeName: "data-hystmodal",
+        waitTransitions: true,
+    })
+}
+
+// Для примера --------
+function alert() {
+    const wrapperAlert = document.querySelector('[data-alert="wrapper-alert"]')
+
+    if (!wrapperAlert) return
+
+    const alerts = wrapperAlert.querySelectorAll('[data-alert="alert"]')
+
+    const show = () => {
+        wrapperAlert.classList.add('active')
+        alerts[0].classList.add('active')
+    }
+
+    const hide = () => {
+        setTimeout(() => {
+            wrapperAlert.classList.remove('active')
+            alerts[0].classList.remove('active')
+        }, 3000)
+    }
+
+    document.addEventListener('click', (event) => {
+        const el = event.target
+
+        if (el.closest('[data-alert="call"]')) {
+            show()
+            hide()
+        }
+    })
+}
+// --------
+
 
 // validateForm()
 phoneMask()
@@ -873,5 +911,8 @@ comparison()
 navBar()
 boxInput()
 orderCard()
+modal()
+
+alert() // Для примера
 
 customScrollbar()
