@@ -1,0 +1,40 @@
+<div class="order-card" data-order-card="main">
+    <div class="order-card__block-head">
+        <div class="order-card__block-info-order">
+            <span class="order-card__info-name">Заказ №158 от 25.01.2023</span>
+            <span class="order-card__info-price">1 товар на сумму 320 ₽</span>
+        </div>
+        <div class="order-card__block-info-statuses">
+            <span class="order-card__info-statuses">Доставка</span>
+            <span class="order-card__info-statuses">Стоимость 320 ₽</span>
+            <span class="order-card__info-statuses">Не отгружено</span>
+        </div>
+        <span class="order-card__info-compliance order-card__info-compliance--success">Принят, ожидается оплата</span>
+    </div>
+    <div class="order-card__wrap-products" data-order-card="list-products">
+        @include('./second-product-card.html')
+        @include('./second-product-card.html')
+    </div>
+    <div class="order-card__block-body" data-order-card="block-body">
+        <div class="order-card__btn-more" data-order-card="btn-more">
+            <span class="order-card__btn-more-sign" data-order-card="btn-more-sign">Подробнее о заказе</span>
+            <svg class="order-card__btn-more-icon">
+                <use xlink:href="./assets/icons/sprite-svg.svg#caret-down-2" />
+            </svg>
+        </div>
+        <a href="#" class="order-card__btn-repeat link-reset">
+            <svg class="order-card__btn-repeat-icon">
+                <use xlink:href="./assets/icons/sprite-svg.svg#undo-left-round" />
+            </svg>
+            <span class="order-card__btn-repeat-sign">Повторить заказ</span>
+        </a>
+        <a href="#" class="order-card__info-compliance order-card__info-compliance--error link-reset">Отменить заказ</a>
+        <div class="order-card__block-price">
+            <span class="order-card__price-sign">Итого:</span>
+            <div class="order-card__inner-price">
+                <span class="order-card__price">655 ₽</span>
+                <span class="order-card__old-price">875 ₽</span>
+            </div>
+        </div>
+    </div>
+</div>

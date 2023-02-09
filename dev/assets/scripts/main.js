@@ -825,6 +825,31 @@ function boxInput() {
     })
 }
 
+function orderCard() {
+    const mains = document.querySelectorAll('[data-order-card="main"]')
+
+    if (!mains.length) return
+
+    mains.forEach(main => {
+        const btnMore = main.querySelector('[data-order-card="btn-more"]')
+        const btnMoreText = btnMore.querySelector('[data-order-card="btn-more-sign"]')
+        const listProducts = main.querySelector('[data-order-card="list-products"]')
+        const blockBody = main.querySelector('[data-order-card="block-body"]')
+
+        smoothView(btnMore, listProducts)
+
+        btnMore.addEventListener('click', () => {
+            if (!btnMore.classList.contains('not-active')) {
+                btnMoreText.textContent = 'Скрыть'
+                blockBody.classList.add('active')
+            } else {
+                btnMoreText.textContent = 'Подробнее о заказе'
+                blockBody.classList.remove('active')
+            }
+        })
+    })
+}
+
 
 // validateForm()
 phoneMask()
@@ -847,5 +872,6 @@ sorting()
 comparison()
 navBar()
 boxInput()
+orderCard()
 
 customScrollbar()

@@ -142,4 +142,16 @@
                 visibility $transition-time;
         }
     }
+
+    .current-orders {
+        &__wrap-info {
+            order: 2;
+        }
+    }
+
+    .order-history {
+        &__wrap-info {
+            order: 2;
+        }
+    }
 }

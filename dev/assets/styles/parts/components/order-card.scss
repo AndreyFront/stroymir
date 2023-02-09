@@ -1,0 +1,237 @@
+.order-card {
+    background-color: $color-4;
+    box-shadow: 0px 4px 25px rgba(150, 195, 255, 0.06);
+    border-radius: 16px;
+
+    &--history {
+        .order-card {
+
+            &__block-body {
+                position: relative;
+                grid-template-columns: repeat(2, max-content);
+
+                &.active {
+                    grid-template-columns: repeat(2, max-content) auto;
+
+                    .order-card__btn-repeat-order {
+                        position: relative;
+                        opacity: 1;
+                        pointer-events: auto;
+                        top: 0;
+                        left: 0;
+                        transform: translateY(0);
+                    }
+                }
+            }
+
+            &__btn-repeat-order {
+                position: absolute;
+                top: 50%;
+                left: 24px;
+                transform: translateY(-50%);
+                opacity: 0;
+                pointer-events: none;
+            }
+        }
+    }
+
+    &__block-head {
+        display: grid;
+        grid-auto-columns: max-content;
+        grid-auto-flow: column;
+        justify-content: space-between;
+        align-content: start;
+        align-items: start;
+        grid-column-gap: 10px;
+        padding: 24px;
+    }
+
+    &__block-info-order {
+        display: grid;
+        grid-row-gap: 2px;
+    }
+
+    &__info-name {}
+
+    &__info-price {
+        color: $color-9;
+    }
+
+    &__block-info-statuses {
+        display: grid;
+        grid-row-gap: 2px;
+    }
+
+    &__info-statuses {
+        @include adaptiv-font(16, 14);
+    }
+
+    &__block-body {
+        position: relative;
+        display: grid;
+        grid-template-columns: auto repeat(2, max-content);
+        align-items: center;
+        grid-column-gap: 26px;
+        padding: 24px;
+        border-top: 1px solid $color-8;
+        transition: grid-template-columns $transition-time;
+
+        &.active {
+            grid-template-columns: repeat(3, max-content) auto;
+
+            .order-card__block-price {
+                position: relative;
+                opacity: 1;
+                pointer-events: auto;
+                top: 0;
+                right: 0;
+                transform: translateY(0);
+            }
+        }
+    }
+
+    &__btn-more {
+        display: grid;
+        grid-template-columns: auto max-content;
+        align-items: center;
+        grid-column-gap: 8px;
+        width: max-content;
+        cursor: pointer;
+        transition: opacity $transition-time;
+
+        &:hover {
+            opacity: 0.6;
+        }
+
+        &:not(.not-active) .order-card__btn-more-icon {
+            transform: rotate(-180deg);
+        }
+    }
+
+    &__btn-more-sign {
+        @include adaptiv-font(16, 14);
+    }
+
+    &__btn-more-icon {
+        width: 20px;
+        height: 20px;
+        transition: transform $transition-time;
+    }
+
+    &__info-compliance {
+        position: relative;
+        padding-left: 30px;
+        @include adaptiv-font(16, 14);
+        white-space: nowrap;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            width: 24px;
+            height: 24px;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+        }
+
+        &--success {
+            color: $color-7;
+
+            &::before {
+                background-image: url('../images/check-circle.svg');
+            }
+        }
+
+        &--error {
+            color: $color-2;
+
+            &::before {
+                background-image: url('../images/close-circle.svg');
+            }
+        }
+    }
+
+    a.order-card__info-compliance {
+        cursor: pointer;
+        transition: opacity $transition-time;
+
+        &:hover {
+            opacity: 0.6;
+        }
+    }
+
+    &__wrap-products {
+        display: grid;
+        overflow: hidden;
+        transition: height $transition-time;
+    }
+
+    &__btn-repeat {
+        display: grid;
+        grid-template-columns: max-content auto;
+        align-items: center;
+        grid-column-gap: 9px;
+        transition: opacity $transition-time;
+
+        &:hover {
+            opacity: 0.6;
+        }
+    }
+
+    &__btn-repeat-icon {
+        width: 24px;
+        height: 24px;
+    }
+
+    &__btn-repeat-sign {
+        @include adaptiv-font(16, 14);
+        color: $main-color;
+    }
+
+    &__block-price {
+        position: absolute;
+        opacity: 0;
+        pointer-events: none;
+        top: 50%;
+        right: 24px;
+        transform: translateY(-50%);
+        display: grid;
+        grid-template-columns: repeat(2, max-content);
+        grid-column-gap: 9px;
+        justify-content: end;
+        transition: opacity $transition-time, transform $transition-time;
+    }
+
+    &__price-sign,
+    &__price {
+        @include adaptiv-font(32, 24);
+        font-weight: 600;
+        color: $color-23;
+    }
+
+    &__inner-price {
+        display: grid;
+        grid-template-columns: max-content;
+        justify-items: end;
+    }
+
+    &__price {}
+
+    &__old-price {
+        @include adaptiv-font(20, 14);
+        color: $color-9;
+        font-weight: 600;
+        text-decoration: line-through;
+    }
+
+    .second-product-card {
+        border-radius: 0;
+        border-right: none;
+        border-left: none;
+        border-bottom: none;
+        padding: 24px;
+    }
+}

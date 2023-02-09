@@ -411,4 +411,38 @@
             grid-template-columns: 1fr;
         }
     }
+
+    .order-card {
+        &__block-head {
+            grid-auto-flow: row;
+            grid-row-gap: 16px;
+        }
+
+        &__block-body {
+            grid-template-columns: repeat(2, 1fr);
+            grid-row-gap: 8px;
+
+            &.active {
+                grid-template-columns: repeat(2, 1fr);
+                grid-row-gap: 16px;
+            }
+
+            .order-card__info-compliance {
+                grid-column: 2;
+                grid-row: 3;
+                justify-self: end;
+            }
+        }
+
+        &__block-price {
+            grid-column: 1/-1;
+            grid-row: 1;
+            justify-content: space-between;
+        }
+
+        &__btn-repeat {
+            grid-column: 1;
+            grid-row: 3;
+        }
+    }
 }

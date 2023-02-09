@@ -1,0 +1,78 @@
+<section class="order-history">
+    <div class="main-container max-width">
+        <h1 class="title title--h1 title-reset">История заказов</h1>
+        <div class="bifurcation bifurcation--personal-account">
+            <div class="order-history__wrap-info">
+                <div class="order-history__inner-data">
+                    <div class="order-card order-card--history" data-order-card="main">
+                        <div class="order-card__block-head">
+                            <div class="order-card__block-info-order">
+                                <span class="order-card__info-name">Заказ №158 от 25.01.2023</span>
+                                <span class="order-card__info-price">1 товар на сумму 320 ₽</span>
+                            </div>
+                            <span class="order-card__info-compliance order-card__info-compliance--success">Принят,
+                                ожидается оплата</span>
+                        </div>
+                        <div class="order-card__wrap-products" data-order-card="list-products">
+                            @include('./second-product-card.html')
+                            @include('./second-product-card.html')
+                        </div>
+                        <div class="order-card__block-body" data-order-card="block-body">
+                            <a href="#" class="btn btn--theme--primary order-card__btn-repeat-order">
+                                <span class="btn__text">Повторить заказ</span>
+                            </a>
+                            <div class="order-card__btn-more" data-order-card="btn-more">
+                                <span class="order-card__btn-more-sign" data-order-card="btn-more-sign">Подробнее о
+                                    заказе</span>
+                                <svg class="order-card__btn-more-icon">
+                                    <use xlink:href="./assets/icons/sprite-svg.svg#caret-down-2" />
+                                </svg>
+                            </div>
+                            <div class="order-card__block-price">
+                                <span class="order-card__price-sign">Итого:</span>
+                                <div class="order-card__inner-price">
+                                    <span class="order-card__price">655 ₽</span>
+                                    <span class="order-card__old-price">875 ₽</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="order-card order-card--history" data-order-card="main">
+                        <div class="order-card__block-head">
+                            <div class="order-card__block-info-order">
+                                <span class="order-card__info-name">Заказ №158 от 25.01.2023</span>
+                                <span class="order-card__info-price">1 товар на сумму 320 ₽</span>
+                            </div>
+                            <span class="order-card__info-compliance order-card__info-compliance--success">Принят,
+                                ожидается оплата</span>
+                        </div>
+                        <div class="order-card__wrap-products" data-order-card="list-products">
+                            @include('./second-product-card.html')
+                            @include('./second-product-card.html')
+                        </div>
+                        <div class="order-card__block-body" data-order-card="block-body">
+                            <a href="#" class="btn btn--theme--primary order-card__btn-repeat-order">
+                                <span class="btn__text">Повторить заказ</span>
+                            </a>
+                            <div class="order-card__btn-more" data-order-card="btn-more">
+                                <span class="order-card__btn-more-sign" data-order-card="btn-more-sign">Подробнее о
+                                    заказе</span>
+                                <svg class="order-card__btn-more-icon">
+                                    <use xlink:href="./assets/icons/sprite-svg.svg#caret-down-2" />
+                                </svg>
+                            </div>
+                            <div class="order-card__block-price">
+                                <span class="order-card__price-sign">Итого:</span>
+                                <div class="order-card__inner-price">
+                                    <span class="order-card__price">655 ₽</span>
+                                    <span class="order-card__old-price">875 ₽</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @include('./nav-bar.html')
+        </div>
+    </div>
+</section>
